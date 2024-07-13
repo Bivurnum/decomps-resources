@@ -7,6 +7,7 @@
 ## Contents
 * [Introduction](#introduction)
 * [Games with Decomps](#games-with-decomps)
+* [GitHub Desktop](#github-desktop)
 
 ## Introduction
 You've decided you want to hack a Pokémon GBA ROM. Great! Welcome to the world of gen 3 ROM hacking!
@@ -17,13 +18,27 @@ There are two different ways to hack: Binary and Decomps.
 
 ***Decomps***: The code within a GBA ROM is generally unreadable to most humans. However, the code for both the Emerald and FireRed versions of Pokémon have been decompiled into a programming language that is much easier for people to work with: the C programmong language. ("Decomp" is short for "decompilation.") This allows us to make changes to the code more directly and in more specific ways. Because it is a decomp, we are not working with a ROM directly; we make the changes we want to the code and then compile a brand new ROM that includes our changes. It is thanks to [pret](https://github.com/pret) that we have these decomps to work with.
 
-[Here is an overview](https://github.com/pret/pokeemerald/wiki/Why-should-I-use-this-over-binary-hacking) of the differences between the two hacking methods and the advantages of using a decomp over binary hacking.
+[Here is an overview](https://github.com/pret/pokeemerald/wiki/Why-should-I-use-this-over-binary-hacking) of the differences between the two hacking methods and the advantages of using a decomp over binary hacking (by LOuroboros).
 
 ## Games with Decomps
 * [pokeemerald](https://github.com/pret/pokeemerald/blob/master/INSTALL.md): The decomp of Pokémon Emerald. This is the one with the most documentation, tutorials, and support. There is also [pokeemerald-expansion](#pokeemerald-expansion), which is a highly enhanced version of pokeemerald. The expansion will be covered in more detail in its own section below.
 * [pokefirered](https://github.com/pret/pokefirered/blob/master/INSTALL.md): The decomp of Pokémon FireRed. This is the one to chose when you specifically want a gen 1 remake as your ROM base. While not as extensively supported as pokeemerald, pokefirered functions similarly to pokeemerald and many of the tutorials can be applied to both.
 
 While pokeruby exists, it has minimal support and Ruby is so similar to Emerald in structure that you are better off using pokeemerald instead.
+There are no decomps for LeafGreen or Sapphire because they are so similar to their counterpart games.
 
-I won't be covering it in this guide, but it is worth mentioning that the Pokémon Pinball game for the GBA also has a decomp:
+They are not decomps, but the gen 1 and gen 2 games (GB & GBC) have disassemblies that work similarly to decomps. The main difference here is that they are written in their own assembly languages, not C. As such, they have their own sets of tools and tutorials separate from decomps. Consult their respective repository wikis for more information:
+* [pokered](https://github.com/pret/pokered/wiki/Tutorials): Pokémon Red
+* [pokecrystal](https://github.com/pret/pokecrystal/wiki): Pokémon Crystal
+
+I won't be covering them in this guide, but it is worth mentioning that these Pokémon spinoff games for the GBA also have decomps:
 * [pokepinballrs](https://github.com/pret/pokepinballrs): Pokémon Pinball: Ruby & Sapphire
+* [pmd-red](https://github.com/pret/pmd-red/blob/master/INSTALL.md): Pokémon Mystery Dungeon: Red Rescue Team
+
+## pokeemerald-expansion
+
+## GitHub Desktop
+I hacked with decomps for over a year without knowing the existence of GitHub Desktop. I'm not exaggerating when I say this would have saved me HUNDREDS of hours of work and headaches had I been using it.
+
+The benefits of using GitHub Desktop:
+* 
