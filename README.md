@@ -11,11 +11,13 @@
 * [Installing a Decomp](#installing-a-decomp)
 * [GitHub Desktop](#github-desktop)
 * [Useful Commands](#useful-commands)
-* [Decomp Tools](#decomp-tools)
+* [Useful Programs](#useful-programs)
 * [Emulators](#emulators)
 * [The Workflow](#the-workflow)
 * [Pulling Feature Branches](#pulling-feature-branches)
 * [Tutorials](#tutorials)
+* [Scripting](#scripting)
+* [Making a Patch](#making-a-patch)
 
 ## Introduction
 You've decided you want to hack a Pokémon GBA ROM. Great! Welcome to the world of gen 3 ROM hacking!
@@ -31,19 +33,19 @@ There are two different ways to hack: Binary and Decomps.
 This guide is mostly informed by information I have stumbled into over time, as well as my own personal experiences. If anyone has any suggestions for additions or changes to this guide, please send me a message [on pokecommunity](https://www.pokecommunity.com/conversations/add?to=Bivurnum) or [on Reddit](https://www.reddit.com/user/Bivurnum/).
 
 ## Games with Decomps
-* [pokeemerald](https://github.com/pret/pokeemerald/blob/master/INSTALL.md): The decomp of Pokémon Emerald. This is the one with the most documentation, tutorials, and support. There is also [pokeemerald-expansion](#pokeemerald-expansion), which is a highly enhanced version of pokeemerald. The expansion will be covered in more detail in its own section below.
-* [pokefirered](https://github.com/pret/pokefirered/blob/master/INSTALL.md): The decomp of Pokémon FireRed. This is the one to chose when you specifically want a gen 1 remake as your ROM base. While not as extensively supported as pokeemerald, pokefirered functions similarly to pokeemerald and many of the tutorials can be applied to both.
+* [**pokeemerald**](https://github.com/pret/pokeemerald/blob/master/INSTALL.md): The decomp of Pokémon Emerald. This is the one with the most documentation, tutorials, and support. There is also [pokeemerald-expansion](#pokeemerald-expansion), which is a highly enhanced version of pokeemerald. The expansion will be covered in more detail in its own section below.
+* [**pokefirered**](https://github.com/pret/pokefirered/blob/master/INSTALL.md): The decomp of Pokémon FireRed. This is the one to chose when you specifically want a gen 1 remake as your ROM base. While not as extensively supported as pokeemerald, pokefirered functions similarly to pokeemerald and many of the tutorials can be applied to both.
 
 While pokeruby exists, it has minimal support and Ruby is so similar to Emerald in structure that you are better off using pokeemerald instead.
 There are no decomps for LeafGreen or Sapphire because they are so similar to their counterpart games.
 
 They are not decomps, but the gen 1 and gen 2 games (GB & GBC) have disassemblies that work similarly to decomps. The main difference here is that they are written in their own assembly languages, not C. As such, they have their own sets of tools and tutorials separate from decomps. Consult their respective repository wikis for more information:
-* [pokered](https://github.com/pret/pokered/wiki/Tutorials): Pokémon Red
-* [pokecrystal](https://github.com/pret/pokecrystal/wiki): Pokémon Crystal
+* [**pokered**](https://github.com/pret/pokered/wiki/Tutorials): Pokémon Red
+* [**pokecrystal**](https://github.com/pret/pokecrystal/wiki): Pokémon Crystal
 
 I won't be covering them in this guide, but it is worth mentioning that these Pokémon spinoff games for the GBA also have decomps:
-* [pokepinballrs](https://github.com/pret/pokepinballrs): Pokémon Pinball: Ruby & Sapphire
-* [pmd-red](https://github.com/pret/pmd-red/blob/master/INSTALL.md): Pokémon Mystery Dungeon: Red Rescue Team
+* [**pokepinballrs**](https://github.com/pret/pokepinballrs): Pokémon Pinball: Ruby & Sapphire
+* [**pmd-red**](https://github.com/pret/pmd-red/blob/master/INSTALL.md): Pokémon Mystery Dungeon: Red Rescue Team
 
 ## pokeemerald-expansion
 The amazing team with ROM Hacking Hideout (RHH) have spent years putting together a version of pokeemerald that includes modern Pokémon mechanics and a plethora of quality of life features. The amount of features they've added is staggeringly large, but here is a general list of features that make pokeemerald-expansion great:
@@ -98,8 +100,16 @@ This is a list of commands that can be useful when working with a decomp. These 
 
 * `^C` is not so much a command as it is a useful prompt. Pressing the CONTROL key and the C key together while the console is running a command will stop the operation. This is useful if you need to interrupt the compilation process.
 
-## Decomp Tools
+## Useful Programs
+* [**Visual Studio Code**](https://code.visualstudio.com/): The most important tool we will utilize when hacking a decomp is a text editor. This is what we will be using to directly edit the code inside the files. Visual Studio Code is the one I recommend the most, by far. It can work with the whole project at once (not just one file at a time). It works well with git for tracking changes and resolving merge conflicts, and is compatible with GitHub Desktop. It has extentions for the C language (and Poryscript!) that keep track of the syntax and alert you to errors in real time. Also, it's free! But you can use whatever program you want for this as long as it can edit text files.
 
+* [**Porymap**](https://github.com/huderlem/porymap/blob/master/README.md): This program is required if you want to change the maps in the game. It also makes it extremely easy to alter the overworld objects (NPCs), wild Pokémon encounter rates, and metatiles. I will be adding a beginner's tutorial for Porymap to this guide later. <!-- CHANGE LATER -->
+
+* [**Poryscript**](https://github.com/huderlem/poryscript/blob/master/README.md): This isn't really a program. It's a new programming language that can be incorporated directly into your project to make scripting easier. See the [Scripting](#scripting) section for more info.
+
+* [**GraphicsGale**](https://graphicsgale.com/us/): This is what I recommend for creating/altering most sprites and tilesets. I know there are other sprite editors out there, but this is the one I'm most comfortable with and it also seems to be the one that most decomp graphics tutorials use.
+
+* [**Tilemap Studio**](https://github.com/Rangi42/tilemap-studio/blob/master/README.md): A tool for working with the decomp tilemaps, like the region map or the title screen.
 
 ## Emulators
 
@@ -126,3 +136,7 @@ When you are finished working on your project for now, you can just close everyt
 ## Pulling Feature Branches
 
 ## Tutorials
+
+## Scripting
+
+## Making a Patch
