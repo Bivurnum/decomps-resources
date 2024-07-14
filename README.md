@@ -103,7 +103,7 @@ This is a list of commands that can be useful when working with a decomp. These 
 ## Useful Programs
 * [**Visual Studio Code**](https://code.visualstudio.com/): The most important tool we will utilize when hacking a decomp is a text editor. This is what we will be using to directly edit the code inside the files. Visual Studio Code is the one I recommend the most, by far. It can work with the whole project at once (not just one file at a time). It works well with git for tracking changes and resolving merge conflicts, and is compatible with GitHub Desktop. It has extentions for the C language (and Poryscript!) that keep track of the syntax and alert you to errors in real time. Also, it's free! But you can use whatever program you want for this as long as it can edit text files.
 
-* [**Porymap**](https://github.com/huderlem/porymap/blob/master/README.md): This program is required if you want to change the maps in the game. It also makes it extremely easy to alter the overworld objects (NPCs), wild Pokémon encounter rates, and metatiles. I will be adding a beginner's tutorial for Porymap to this guide later. <!-- CHANGE LATER -->
+* [**Porymap**](https://github.com/huderlem/porymap/blob/master/README.md): This program is required if you want to change the maps in the game. It also makes it extremely easy to alter the overworld objects (NPCs), wild Pokémon encounter rates, and metatiles. I will be adding a Porymap beginner's tutorial to this guide later. <!-- CHANGE LATER -->
 
 * [**Poryscript**](https://github.com/huderlem/poryscript/blob/master/README.md): This isn't really a program. It's a new programming language that can be incorporated directly into your project to make scripting easier. See the [Scripting](#scripting) section for more info.
 
@@ -134,8 +134,27 @@ Once that is done, you're ready to work on your ROM hack. This next list of step
 When you are finished working on your project for now, you can just close everything normally. When you want to come back to it, just follow the instructions at the beginning of this section again.
 
 ## Pulling Feature Branches
+Some hackers develop features that other people might find useful in their projects. These are called feature branches, and they are generally quite easy to implement. I'll go through an example to help illustrate how this is done:
+
+I have personally developed a feature branch that adds walking animations to Emerald NPCs that don't originally have any. If you wanted to merge that feature into your own project, you would enter these commands into your console:
+
+`git remote add Bivurnum https://github.com/Bivurnum/pokeemerald`  
+`git pull Bivurnum all-npcs-walk`
+
+The first command just tells git which repository you want to pull from. The second command pulls the changes from my branch titled "all-npcs-walk" and tries to apply them to your project. It may take the console some time to think about things after you enter the `git pull` command, so be patient. If it prompts you to enter a commit message, you can just press the CONTROL key and the X key at the same time and it will continue merging the branch into your project.
+
+If you get any merge conflicts, you'll have to resolve them before the branch can be implemented into your project. This is where VS Code comes in handy. If you open your project in VS Code after trying to merge, it will show you where all of the conflicts occur in the code. Once you have all of the conflicts resolved, you can click the button that says "Complete Merge" and it will fully merge the branch into your project. Then you can commit the changes like normal.
+
+If the console tells you that the branch cannot be merged, you'll have to make all of the alterations yourself by hand. This tends to happen when older branches are not updated to be compatible with the latest version of the decomp. Don't worry! There is a convenient way to look up all of the changes that need to be done and which files need to be altered. If you go to the repository page on github.com, near the top of the page, click where it says how many commits ahead of the upstream it is. This will bring you to a page like [this one](https://github.com/pret/pokeemerald/compare/master...Bivurnum:pokeemerald:all-npcs-walk). If the branch has a lot of commits, you may have to click where it says the number of files changed. From here, you just have to scroll down and make the changes that are listed. Things in green are to be added to the file, while things in red need to be removed.
 
 ## Tutorials
+There are so many tutorials for the gen 3 decomps, and the list keeps growing with each passing day! The decomp that gets the most attention here is pokeemerald (and by association pokeemerald-expansion). However, if you're finding a lack of pokefirered tutorials, remember that both pokefirered and pokeemerald are written in the C programming language, so a lot of what works for one can probably work for the other (usually with some minor code tweaking).
+
+* [**The pokeemerald wiki**](https://github.com/pret/pokeemerald/wiki): There is a whole tutorials section here with contributions from countless hackers. The tutorials are organized by section, so it is easy to find the kind of tutorial you're looking for. Feel free to contribute to it if you come up with something new yourself.
+
+* [Team Aqua's Hideout Youtube Playlist](https://www.youtube.com/playlist?list=PLLNv9Lq6kDmTIYfN5NvgQRvfOHTOXl0uU): Some of the videos are a bit outdated, but this playlist is still one of the best ways to get to know how the decomps work.
+
+* [pokecommunity](https://www.pokecommunity.com/#fan-games.289): There are tutorials at pokecommunity.com, but it has become more of a place to post about ROM hack releases or [ask technical questions](https://www.pokecommunity.com/forums/decomps-disassemblies.436/) about hacking. Most of the tutorials you can find here are also represented in the pokeemerald wiki.
 
 ## Scripting
 
