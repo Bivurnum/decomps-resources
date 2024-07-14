@@ -14,6 +14,7 @@
 * [Decomp Tools](#decomp-tools)
 * [Emulators](#emulators)
 * [The Workflow](#the-workflow)
+* [Pulling Feature Branches](#pulling-feature-branches)
 * [Tutorials](#tutorials)
 
 ## Introduction
@@ -74,10 +75,28 @@ The benefits of using GitHub Desktop:
 
 I cannot overstate how much easier GitHub Desktop makes working with decomps. Follow [the guide here](https://github.com/Pawkkie/Team-Aquas-Asset-Repo/wiki/The-Basics-of-GitHub) (by Pawkkie and RavePossum) to set it up specifically for the gen 3 decomps. It's not necessary to use GitHub Desktop to hack with a decomp, but why wouldn't you use something that will make your life that much easier?
 
-Many of the upcoming sections will assume you are using GitHub Desktop. Any individual steps that mention GitHub Desktop can be skipped if you opt not to use it.
+Many of the upcoming sections will assume you are using GitHub Desktop. Any individual steps that mention GitHub Desktop can be skipped if you opt not to use it. ([This guide](https://www.pokecommunity.com/threads/about-the-basics-of-git-and-starting-a-project-with-the-pokeemerald-expansion.432321/) by Lunos can help you use git for your project if you can't/don't want to use GitHub Desktop.)
 
 ## Useful Commands
+This is a list of commands that can be useful when working with a decomp. These are all used in the console (Ubuntu, Debian, MSYS2, whatever you set up in the install instructions).
 
+* `make` is used to compile a new ROM from the project files, including any changes you made. This will replace any existing ROM with the same name within your project's folder.
+
+* `nproc` is used to get the number of processors you can use for parallel building. This will not work on Mac (see [this](https://github.com/pret/pokeemerald/blob/master/INSTALL.md#parallel-builds) for more details).
+
+* `make -j<nproc>` is a version of `make` that utilizes parallel building. This usually makes the ROM compile faster. Be sure to replace `<nproc>` with the number you get when you run the `nproc` command. For example, if you run `nproc` and it outputs the number 8, you should run `make -j8`. I've never seen this number change over time, but I always run `nproc` before running `make -j<nproc>`, just to be safe.
+
+* `git remote add <name> <repo>` is used to add a repository as a remote. This is a useful prerequisite for the `git pull` command. Be sure to replace `<name>` with the name you want to associate with the remote; I advise using the name of the owner of the repo. Replace `<repo>` with the web address of the repository you're adding.  
+(An example of this in action is `git remote add Bivurnum https://github.com/Bivurnum/pokeemerald`.)
+
+* `git pull <remote> <branch>` is used to pull changes from another branch into your project. Be sure to replace `<remote>` with the `<name>` you defined in `git remote add`. Replace `<branch>` with the exact name of the branch you are trying to pull. There is more information on this process in the [Pulling Feature Branches](#pulling-feature-branches) section.  
+(An example of this in action is `git pull Bivurnum all-npcs-walk`.)
+
+* `make clean` is used to reconvert all of the files that get converted to a format that the compiler can read. This conversion doesn't happen every time you compile the ROM (in order to make compilation faster because it doesn't need to convert everything every time). Keep in mind that this does not compile the ROM.
+
+* `make mostlyclean` does exactly what `make clean` does, but without affecting things in the "tools" file. You most often won't need to do any changes to the tools (Poryscript being a notable exception), so `make clean` is most often less necessary than `make mostlyclean`. You should run this command if you make big changes to the graphics (like ghoulslash's [Overworld Expansion](https://github.com/pret/pokeemerald/wiki/Feature-Branches#overworld-expansion)). Keep in mind that this does not compile the ROM.
+
+* `^C` is not so much a command as it is a useful prompt. Pressing the CONTROL key and the C key together while the console is running a command will stop the operation. This is useful if you need to interrupt the compilation process.
 
 ## Decomp Tools
 
@@ -103,5 +122,7 @@ Once that is done, you're ready to work on your ROM hack. This next list of step
 7. Once you have your changes how you want them, go to GitHub Desktop and make a commit detailing your changes. I also advise you immediately push that commit to the online repository.
 
 When you are finished working on your project for now, you can just close everything normally. When you want to come back to it, just follow the instructions at the beginning of this section again.
+
+## Pulling Feature Branches
 
 ## Tutorials
