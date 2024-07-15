@@ -27,4 +27,4 @@ If the console tells you that the branch cannot be merged, you'll have to make a
 
 ![](https://github.com/Bivurnum/decomps-resources/blob/main/assets/images/github_commits_ahead.png)
 
-This will bring you to a page like [this one](https://github.com/pret/pokeemerald/compare/master...Bivurnum:pokeemerald:all-npcs-walk). If the branch has a lot of commits, you may have to click where it says the number of files changed. From here, you just have to scroll down and make the changes that are listed. Things in green are to be added to the file, while things in red need to be removed. You may need to alter things as needed to fit within the code of your project.
+This will bring you to a page like [this one](https://github.com/pret/pokeemerald/compare/master...Bivurnum:pokeemerald:all-npcs-walk). If the branch has a lot of commits, you may have to click where it says the number of files changed. From here, you just have to scroll down and make the changes that are listed. Things in green are to be added to the file, while things in red need to be removed. You may need to alter things as needed to work within the code of your project.
