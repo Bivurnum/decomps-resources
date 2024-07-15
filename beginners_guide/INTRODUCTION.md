@@ -9,6 +9,4 @@ There are two different ways to hack: Binary and Decomps.
 
 [Here is an overview](https://github.com/pret/pokeemerald/wiki/Why-should-I-use-this-over-binary-hacking) of the differences between the two hacking methods and the advantages of using a decomp over binary hacking (by LOuroboros).
 
-This guide is mostly informed by information I have stumbled into over time, as well as my own personal experiences. If anyone has anything to contribute to this guide, please do! Make sure to credit the appropriate people if you are using/linking to the work of others. And identify yourself as a contributor if you like.
-
-You can contact me ([on pokecommunity](https://www.pokecommunity.com/conversations/add?to=Bivurnum) or [on Reddit](https://www.reddit.com/user/Bivurnum/)) if you have any questions about the decomps. I'm no expert, but I'm happy to help however I can.
+This guide is mostly informed by information I have stumbled into over time, as well as my own personal experiences. If anyone has any suggestions for additions or changes to this guide, please send me a message [on pokecommunity](https://www.pokecommunity.com/conversations/add?to=Bivurnum) or [on Reddit](https://www.reddit.com/user/Bivurnum/). You can also contact me if you have any questions about the decomps. I'm no expert, but I'm happy to help however I can.
