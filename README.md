@@ -30,7 +30,7 @@ There are two different ways to hack: Binary and Decomps.
 
 [Here is an overview](https://github.com/pret/pokeemerald/wiki/Why-should-I-use-this-over-binary-hacking) of the differences between the two hacking methods and the advantages of using a decomp over binary hacking (by LOuroboros).
 
-This guide is mostly informed by information I have stumbled into over time, as well as my own personal experiences. If anyone has any suggestions for additions or changes to this guide, please send me a message [on pokecommunity](https://www.pokecommunity.com/conversations/add?to=Bivurnum) or [on Reddit](https://www.reddit.com/user/Bivurnum/).
+This guide is mostly informed by information I have stumbled into over time, as well as my own personal experiences. If anyone has any suggestions for additions or changes to this guide, please send me a message [on pokecommunity](https://www.pokecommunity.com/conversations/add?to=Bivurnum) or [on Reddit](https://www.reddit.com/user/Bivurnum/). You can also contact me if you have any questions about the decomps. I'm no expert, but I'm happy to help however I can.
 
 ## Games with Decomps
 * [**pokeemerald**](https://github.com/pret/pokeemerald/blob/master/INSTALL.md): The decomp of Pokémon Emerald. This is the one with the most documentation, tutorials, and support. There is also [pokeemerald-expansion](#pokeemerald-expansion), which is a highly enhanced version of pokeemerald. The expansion will be covered in more detail in its own section below.
@@ -62,7 +62,9 @@ You can find the [install instructions for pokeemerald-expansion here](https://g
 ## Installing a Decomp
 Once you've chosen which decomp you want to work with, follow the instructions listed in the Install.md file within that decomp's repository on GitHub. The links in the previous sections take you to the respective install instructions. The process of installing a decomp can be a bit lengthy, but once it is set up correctly you shouldn't ever have to do it again. The only exception to this is pokeemerald-expansion, which has a completely different installation than the others, so if you are going to work with both pokeemerald and pokeemerald-expansion you'll have to follow the installation instructions for both.
 
-Note: If any of the commands don't work properly, try closing the console and then opening it again as an administrator. Then run the commands again.
+Notes:
+* If any of the commands don't work properly, try closing the console and then opening it again as an administrator. Then run the commands again.
+* If you're having difficulty implementing the instructions in the INSTALL.md file, you could try following [this guide](https://www.pokecommunity.com/threads/tutorial-how-to-build-the-pok%C3%A9mon-gba-decomps-using-wsl-win10.432351/) (by Lunos) instead (this may not work for pokeemerald-expansion).
 
 Most of the install instructions are just setting up the compiler so you can compile a new ROM with your code changes. Once you get to the section labeled "Installation", you are all set up to compile the ROM. From here, you just need to get the repository with all of the code files onto your device. Following the instructions in the "Installation" section will allow you to do that, but you may find it easier at this point to follow the instructions in the [GitHub Desktop](#github-desktop) section of this guide instead.
 
