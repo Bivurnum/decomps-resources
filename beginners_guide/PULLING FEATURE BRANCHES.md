@@ -1,5 +1,5 @@
 ## Pulling Feature Branches
-Some hackers develop features that other people might find useful in their projects. These are called feature branches, and they are generally quite easy to implement. I'll go through an example to help illustrate how this is done:
+Some hackers develop features in their own branches that other people might find useful to include in their projects. These are called feature branches, and they are generally quite easy to implement. I'll go through an example to help illustrate how this is done:
 
 I have personally developed a feature branch that adds walking animations to Emerald NPCs that don't originally have any. If you wanted to merge that feature into your own project, you would enter these commands into your console:
 
