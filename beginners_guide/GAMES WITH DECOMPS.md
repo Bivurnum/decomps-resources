@@ -5,10 +5,10 @@
 While pokeruby exists, it has minimal support and Ruby is so similar to Emerald in structure that you are better off using pokeemerald instead.
 There are no decomps for LeafGreen or Sapphire because they are so similar to their counterpart games.
 
-They are not decomps, but the gen 1 and gen 2 games (GB & GBC) have disassemblies that work similarly to decomps. The main difference here is that they are written in their own assembly languages, not C. As such, they have their own sets of tools and tutorials separate from decomps. Consult their respective repository wikis for more information:
-* [**pokered**](https://github.com/pret/pokered/wiki/Tutorials): Pokémon Red
-* [**pokecrystal**](https://github.com/pret/pokecrystal/wiki): Pokémon Crystal
-
 I won't be covering them in this guide, but it is worth mentioning that these Pokémon spinoff games for the GBA also have decomps:
 * [**pokepinballrs**](https://github.com/pret/pokepinballrs): Pokémon Pinball: Ruby & Sapphire
 * [**pmd-red**](https://github.com/pret/pmd-red/blob/master/INSTALL.md): Pokémon Mystery Dungeon: Red Rescue Team
+
+They are not decomps, but the gen 1 and gen 2 games (GB & GBC) have disassemblies that work similarly to decomps. The main difference here is that they are written in their own assembly languages, not C. As such, they have their own sets of tools and tutorials separate from decomps. Consult their respective repository wikis for more information:
+* [**pokered**](https://github.com/pret/pokered/wiki/Tutorials): Pokémon Red
+* [**pokecrystal**](https://github.com/pret/pokecrystal/wiki): Pokémon Crystal
