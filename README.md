@@ -151,7 +151,12 @@ I have personally developed a feature branch that adds walking animations to Eme
 `git remote add Bivurnum https://github.com/Bivurnum/pokeemerald`  
 `git pull Bivurnum all-npcs-walk`
 
-The first command just tells git which repository you want to pull from. The second command pulls the changes from my branch titled "all-npcs-walk" and tries to apply them to your project. It may take the console some time to think about things after you enter the `git pull` command, so be patient. If it prompts you to enter a commit message, you can just press the CONTROL key and the X key at the same time and it will continue merging the branch into your project.
+The first command just tells git which repository you want to pull from. The second command pulls the changes from my branch titled "all-npcs-walk" and tries to apply them to your project. It may take the console some time to think about things after you enter the `git pull` command, so be patient. It will likely prompt you to enter a merge commit message similar to this:
+
+![Screenshot of the console asking for a merge commit message](/assets/images/merge_commit_message.png)
+![Screenshot of the actions during commit message](/assets/images/merge_commit_actions.png)
+
+If it prompts you to enter a commit message, you can just press the CONTROL key and the X key at the same time (to Exit) and it will continue merging the branch into your project.
 
 If you get any merge conflicts, you'll have to resolve them before the branch can be implemented into your project. This is where VS Code comes in handy. If you open your project in VS Code after trying to merge, it will show you where all of the conflicts occur in the code. Once you have all of the conflicts resolved, you can click the button that says "Complete Merge" and it will fully merge the branch into your project. Then you can commit the changes like normal.
 
