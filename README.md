@@ -16,7 +16,7 @@
 * [The Workflow](#the-workflow)
 * [Pulling Feature Branches](#pulling-feature-branches)
 * [Tutorials](#tutorials)
-* [Scripting](#scripting)
+<!-- * [Scripting](#scripting) -->
 * [Making a Patch](#making-a-patch)
 * [Applying a Patch](#applying-a-patch)
 
@@ -180,7 +180,7 @@ There are a great many tutorials for the gen 3 decomps, and the list keeps growi
 
 * [pokecommunity](https://www.pokecommunity.com/forums/decomp-disassembly-tutorials.475/): These forums contain tutorials for both disassemblies (gen 1 and 2) and decomps. This list is a little harder to sort through, and some of these tutorials are also represented in the pokeemerald wiki, but there are some very useful guides in here if you take the time to look for them.
 
-## Scripting
+<!-- ## Scripting -->
 
 ## Making a Patch
 When your ROM hack is ready to distribute to others, you'll need to provide them with a patch.
@@ -191,10 +191,12 @@ When your ROM hack is ready to distribute to others, you'll need to provide them
 Distributing a patch to other people technically skirts around comitting any illegal acts because you are only distributing your own changes and not Nintendo's original code. That is the theory, anyway.
 
 There are a few different ways to make a patch, but I will be showing you the one that I use.  
-Follow the link to this online patcher, [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/):  
+Follow the link to this online patcher, [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/):
+
 ![Screenshot of Rom Patcher JS](/assets/images/rom_patcher_normal.png)
 
-Click the toggle in the upper right to switch it to Creator Mode:  
+Click the toggle in the upper right to switch it to Creator Mode:
+
 ![Screenshot of Rom Patcher JS's Creator mode](/assets/images/rom_patcher_creator.png)
 
 Where it says "Original ROM", you'll have to provide the base ROM that you want people to be able to apply your patch to. This will be an unedited ROM of either Emerald or FireRed (depending on which one you decided to hack). There are different versions of these games out there, so you should always specify which base ROM version you used to make your patch.  
@@ -209,9 +211,31 @@ Where it says "Modified ROM", you will provide the ROM that you compiled from yo
 
 The "Patch Type" is completely up to you. They are just different formats of patches. If your patch doesn't work for someone, try making a new patch using a different format.
 
-Once you have everything filled in, just click the "Create Patch" button and it will prompt you to name it and designate where you'd like to download it on your device:  
+Once you have everything filled in, just click the "Create Patch" button and it will prompt you to name it and designate where you'd like to download it on your device:
+
 ![Screenshot of Rom Patcher JS's Creator mode filled in](/assets/images/rom_patcher_creator_filled.png)
 
-Congratulations! You can provide a copy of your patch to whoever you want and they can use it to [patch their own copy](#applying-a-patch) of your ROM hack! If you wanted to provide a download link for anyone to download it, you could host your patch on (Mediafire](https://www.mediafire.com/) and provide a link to that.
+Congratulations! You can provide a copy of your patch to whoever you want and they can use it to [patch their own copy](#applying-a-patch) of your ROM hack! If you wanted to provide a download link for anyone to download it, you could host your patch on [Mediafire](https://www.mediafire.com/) and provide a link to that.
 
 ## Applying a Patch
+In order to play a ROM hack, you'll have to obtain that hack's patch. The best place to find the most up to date version of a particular patch is on the original creator's official post. [The PokéRom Codex](https://pokeromcodex.notion.site/8f188f1761b9430f9adb68833c44e5b8?v=bb31503a729442f798b4233509dacab8) is an ever-expanding database of ROM hacks that provides links to the appropriate places to find the patch wherever possible.
+
+GBA patches will almost always be one of the following file types:
+* .ips
+* .bps
+* .ups
+* .aps
+* .ppf
+* .rup
+
+Once you've downloaded a patch, you will need to apply it to an unedited ROM of the game it was based on. For example, if the ROM hack is a hack of Pokémon FireRed, you will need to apply the patch to an unedited copy of a FireRed ROM. The creator will usually tell you which version of the base rom you should use, but if they don't, I advise that you use one of the specific base ROM versions listed in the [Making a Patch](#making-a-patch) section above.
+
+Some hacks will provide you with a link that automatically patches the game for you. Others will provide a patcher application with the patch download (Unbound does this). Most hacks do neither. If you only have a patch, you will need to find a patcher to use. I'll tell you how to use my favorite online patcher, [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/):
+
+![Screenshot of Rom Patcher JS](/assets/images/rom_patcher_normal.png)
+
+Where it says "ROM File", you will provide the unedited base ROM you want to apply the patch to.  
+Where it says "Patch File", you will provide the patch for the ROM hack you want to play.  
+Once these are both filled in, just click the "Apply Patch" button and it will prompt you to name the new ROM and designate where on your device you would like to download it.
+
+That's it! Now you can play the new ROM in the [emulator](#emulators) of your choosing.
