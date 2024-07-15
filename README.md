@@ -114,7 +114,15 @@ This is a list of commands that can be useful when working with a decomp. These 
 * [**Tilemap Studio**](https://github.com/Rangi42/tilemap-studio/blob/master/README.md): A tool for working with the decomp tilemaps, like the region map or the title screen.
 
 ## Emulators
+Emulators are programs that allow you to run games outside of their original hardware. We use emulators that simulate how the GameBoy Advance works, so we don't have to use a physical GBA in order to run our hacked ROMs. They come in handy for testing any changes we make to the decomp. There are a few to choose from, some better than others:
 
+* [**mGBA**](https://mgba.io/): From what I hear, this is the emulator that most accurately simulates how the GBA works. It works on many different devices, including some video game consoles (like Wii and 3DS), making it highly accessible to players. Making sure your ROM hack works with mGBA is a good way to ensure that many people will have the ability to run it correctly.
+
+* [**Visual Boy Advance**](https://visualboyadvance.org/): This is a decently popular emulator that has been around for a good while. It's never given me trouble.
+
+* [**Delta**](https://faq.deltaemulator.com/): While not really useful for testing changes, it is worth mentioning that it exists. It hasn't been around super long, but it is likely the most accessible way for people to play GBA ROMs on their phones. As far as I know, it is the only functional and free phone emulator on all the official app stores.
+
+This is not yet a complete list. <!-- CHANGE LATER -->
 
 ## The Workflow
 These are generally the steps you will take every time you wish to work on your decomp project:
