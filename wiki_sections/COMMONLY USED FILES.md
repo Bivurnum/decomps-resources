@@ -22,8 +22,9 @@ This is a list of files in the decomps that are frequently edited by ROM hackers
 ### New Game
 * [data/scripts/new_game.inc](https://github.com/pret/pokeemerald/blob/master/data/scripts/new_game.inc): This is where the game resets all of the berry trees and sets flags that should be set before a new game starts (these are mostly to hide objects that shouldn't appear until triggered later). pokefirered doesn't have this file.
 * [src/main_menu.c](https://github.com/pret/pokeemerald/blob/master/src/main_menu.c): This is where the main menu is handled (where you choose to continue or start a new game). This is also where Birch's intro speech is handled. In pokefirered, Oak's intro speech is handled in [src/oak_speech.c](https://github.com/pret/pokefirered/blob/master/src/oak_speech.c).
+* [src/starter_choose.c](https://github.com/pret/pokeemerald/blob/master/src/starter_choose.c): This is what handles the screen where the player chooses the starter Pokémon from Birch's bag. Obviously, this file is not in pokefirered, which handles its starter choice in the scripts.
 
-## **pokeemerald-expansion**
+# **pokeemerald-expansion**
 These files are exclusive to pokeemerald-expansion.
 
 ### Config
