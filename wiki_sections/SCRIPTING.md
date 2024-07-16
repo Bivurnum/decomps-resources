@@ -112,7 +112,7 @@ The first two lines inside of the event script use your player gender to determi
 
 The point of using map scripts is to take advantage of the specific conditions in which they run. They can take a bit of getting used to, but you'll get the hang of them the more you try to use them. Look at how the existing scripts handle things on different maps to get a better idea of the usage.
 
-Poryscripts handles the syntax of map scripts a bit differently. Consult [this section](https://github.com/huderlem/poryscript/blob/master/README.md#mapscripts-statement) of the Poryscript guide for further information.
+Poryscript handles the syntax of map scripts a bit differently. Consult [this section](https://github.com/huderlem/poryscript/blob/master/README.md#mapscripts-statement) of the Poryscript guide for further information.
 
 [(back to top)](#scripting)
 
