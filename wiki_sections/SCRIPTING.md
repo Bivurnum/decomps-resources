@@ -167,13 +167,13 @@ RustboroCity_EventScript_LittleGirl::
 ```
 This is run every time you talk to a certain little girl in the southern part of the map. Let's take a look at what it does.
 
-Every line within an event script starts with a macro. A macro is a command that tells the game what we want that line to do. The first line of our example has the macro `lock`. This tells the game to lock movement of the player, so we can't walk around while we are talking to this NPC. The next line uses the macro `faceplayer`, which makes the last object the player interacted with turn to face the player's position. Both of these macros already have all of the information they need in order to run, so it is not necessary to add anything after them on those lines. The game just runs the `lock` macro, then the `faceplayer` macro, then moves on to the next line.
+Every line within an event script starts with a macro. A macro is a command that tells the game what we want that line to do (more on [Macros](#macros) in a later section). The first line of our example has the macro `lock`. This tells the game to lock movement of the player, so we can't walk around while we are talking to this NPC. The next line uses the macro `faceplayer`, which makes the last object the player interacted with turn to face the player's position. Both of these macros already have all of the information they need in order to run, so it is not necessary to add anything after them on those lines. The game just runs the `lock` macro, then the `faceplayer` macro, then moves on to the next line.
 
 The next line is:
 ```
 msgbox RustboroCity_Text_PokemonChangeShape, MSGBOX_DEFAULT
 ```
-`msgbox` is a macro that prints a text box on screen (more on [Macros](#macros) in a later section). This macro needs us to provide some extra information because it doesn't know what text we want to display. So on the same line after we call `msgbox`, we have to provide the specified text we want the game to print. In this case, `RustboroCity_Text_PokemonChangeShape` just refers to a text script later in the file (more on [Text](#text) in a later section).
+`msgbox` is a macro that prints a text box on screen. This macro needs us to provide some extra information because it doesn't know what text we want to display. So on the same line after we call `msgbox`, we have to provide the specified text we want the game to print. In this case, `RustboroCity_Text_PokemonChangeShape` just refers to a text script later in the file (more on [Text](#text) in a later section).
 
 After that, we have `MSGBOX_DEFAULT`, which just tells the game what behavior we want the text box to have. This is actually an optional piece of information to provide, as leaving this part of the line blank just makes the message box have the default behavior. It would look like this:
 ```
