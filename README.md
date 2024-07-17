@@ -21,3 +21,9 @@ It is organized for easiest use in [the wiki](https://github.com/Bivurnum/decomp
 * [Tutorials](https://github.com/Bivurnum/decomps-resources/wiki/Tutorials)
 * [Making a Patch](https://github.com/Bivurnum/decomps-resources/wiki/Making-a-Patch)
 * [Applying a Patch](https://github.com/Bivurnum/decomps-resources/wiki/Applying-a-Patch)
+
+### Other Guides
+* [Commonly Used Files](https://github.com/Bivurnum/decomps-resources/wiki/Commonly-Used-Files)
+
+### Incomplete Guides
+* [Scripting](https://github.com/Bivurnum/decomps-resources/blob/main/wiki_sections/SCRIPTING.md)
