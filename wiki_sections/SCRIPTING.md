@@ -22,7 +22,7 @@ Poryscript is a scripting language that can be incorporated into your decomp pro
 [(back to top)](#scripting)
 
 ## Constants
-Let's start at the top of the scripts file. Not every map will have them, but if any constants are defined they will be at the top of the file. Every object event (NPCs, Cut trees, Briney's boat, etc.) is designated an object id number on the map they are in. If you click on an object event in Porymap, it will display its corresponding object id, like so:
+Let's start at the top of the scripts file. Not every map will have them, but if any constants are defined they will be at the top of the file. Every object (NPCs, Cut trees, Briney's boat, etc.) is designated an object id number on the map they are in. If you click on an object in Porymap, it will display its corresponding object id, like so:
 
 ![](https://github.com/Bivurnum/decomps-resources/blob/main/assets/images/porymap_selected_object.png)
 
@@ -37,7 +37,7 @@ Well, not to worry! This is where the constants come in. Defining a constant at 
 .set LOCALID_RIVAL_ON_BIKE, 29
 .set LOCALID_BIRCH, 36
 ```
-The `.set` here tells the decomp that we want to define a new constant. The `LOCALID_...` is the name of the constant you want to define. The number is the object id you want to assign to the constant. Not all object events need to have constants like this, just the ones whose object id numbers you need to use in the scripts file.
+The `.set` here tells the decomp that we want to define a new constant. The `LOCALID_...` is the name you give to the constant (this can be whatever you want). The number is the object id you want to assign to the constant. Not all objects need to have constants like this, just the ones whose object id numbers you need to use in the scripts file.
 
 > [!NOTE]
 > Sometimes `.equ` is used instead of `.set`. As far as I can tell, `.set` is used to define a constant only for use within that file, while `.equ` is used to define a constant that will be referenced in multiple files. On the other hand, pokefirered sometimes uses `.equ` even when that constant is not used in another file, so what do I know?
@@ -46,11 +46,11 @@ Now you can use the constant in place of the object id number within this script
 ```
 applymovement 36, Route110_Movement_BirchEntrance
 ```
-That is used much later in the scripts file to tell object number 36 (Prof. Birch) to walk on screen. The macro `applymovement` requires you to give it an object id number, so it knows which object to apply the movement to. We can rewrite the line to this:
+This is used much later in the scripts file to tell object number 36 (Prof. Birch) to walk on screen. The macro `applymovement` requires you to give it an object id number, so it knows which object to apply the movement to. We can rewrite the line to this:
 ```
 applymovement LOCALID_BIRCH, Route110_Movement_BirchEntrance
 ```
-Using the constant `LOCALID_BIRCH` instead of the object id number allows anyone who looks at the code (including you) to know exactly which object you are applying the movement to. The decomp still reads it as 36, so nothing has fundamentally changed about the code except our ability to read it easier. This is an extremely convenient functionality to take advantage of. Feel free to define your own constants as needed.
+Using the constant `LOCALID_BIRCH` instead of the object id number allows anyone who looks at the code (including you) to know at a glance exactly which object you are applying the movement to. The decomp still reads it as 36, so nothing has fundamentally changed about the code except our ability to read it easier. This is an extremely convenient functionality to take advantage of. Feel free to define your own constants as needed.
 
 For Poryscript users, the Route 110 constants would look like this:
 ```
@@ -59,7 +59,7 @@ const LOCALID_RIVAL = 28
 const LOCALID_RIVAL_ON_BIKE = 29
 const LOCALID_BIRCH = 36
 ```
-It's in a different format, but it achieves the exact same effect. Just be aware that defining constants in Poryscript like this does not apply to the `raw` sections of code (the original scripting language). In that case you'd have to use `.set` to define constants (like above) in its own `raw` section. It's ok to use both at the same time, like so:
+It's in a different format, but it achieves the exact same effect. Just be aware that defining constants in Poryscript like this does not apply to the `raw` sections of code (the original scripting language). In that case you'd have to use `.set` to define constants (like earlier) in its own `raw` section. It's ok to use both at the same time, like so:
 ```
 const LOCALID_CHALLENGE_BIKER = 21
 const LOCALID_RIVAL = 28
