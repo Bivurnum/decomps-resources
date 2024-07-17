@@ -16,7 +16,7 @@ Scripts are how we tell the game how to handle most things that happen in the ov
 This guide will mostly focus on pokeemerald, but the basics still hold true for pokefirered.
 
 ## Poryscript
-Poryscript is a scripting language that can be incorporated into your decomp project. It allows you to script in a way that more closely resembles the C syntax. I find that it helps me to script more efficiently and concisely. If you'd like to use it, you can find the download, install instructions, and general usage guide here:  
+Poryscript is a scripting language that can be incorporated into your decomp project. It allows you to script in a way that more closely resembles the C syntax. I find that it helps me to script more efficiently and concisely. It is highly recommended! If you'd like to use it, you can find the download, install instructions, and general usage guide here:  
 [Poryscript](https://github.com/huderlem/poryscript/blob/master/README.md) (by huderlem)
 
 [(back to top)](#scripting)
@@ -78,7 +78,8 @@ This allows you to use the constants interchangeably between the poryscript and 
 [(back to top)](#scripting)
 
 ## Map Scripts
-Map scripts are special scripts that run under certain conditions; for example, after you warp into a map or after you close a menu. Every script file is required to have a mapscripts function at the top (below the constants), even if you don't use any map scripts. You cannot have more than one mapscripts function per file. An empty mapscripts function looks like this:
+Map scripts are special scripts that run under certain conditions; for example, after you warp into a map or after you close a menu. Every script file is required to have a mapscripts function at the top (below the constants), even if you don't use any map scripts. You cannot have more than one mapscripts function per file.  
+An example of an empty mapscripts function looks like this:
 ```
 Route102_MapScripts::
 	.byte 0
@@ -152,6 +153,63 @@ Poryscript handles the syntax of map scripts a bit differently. Consult [this se
 [(back to top)](#scripting)
 
 ## Event Scripts
+An event script is a block of script code. If an event script is run, the entire block is run line by line, starting at the top of the event script. After the map scripts, you can add as many event scripts to the file as you want in any order. We already looked at some event scripts in the [Map Scripts](#map-scripts) section.  
+Here is an example of an event script from the Rustboro City scripts:
+```
+RustboroCity_EventScript_LittleGirl::
+	lock
+	faceplayer
+	msgbox RustboroCity_Text_PokemonChangeShape, MSGBOX_DEFAULT
+	applymovement LOCALID_LITTLE_GIRL, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+```
+This is run every time you talk to a certain little girl in the southern part of the map. Let's take a look at what it does.
+
+Every line within an event script starts with a macro. A macro is a command that tells the game what we want that line to do. The first line of our example has the macro `lock`. This tells the game to lock movement of the player, so we can't walk around while we are talking to this NPC. The next line uses the macro `faceplayer`, which makes the last object the player interacted with turn to face the player's position. Both of these macros already have all of the information they need in order to run, so it is not necessary to add anything after them on those lines. The game just runs the `lock` macro, then the `faceplayer` macro, then moves on to the next line.
+
+The next line is:
+```
+msgbox RustboroCity_Text_PokemonChangeShape, MSGBOX_DEFAULT
+```
+`msgbox` is a macro that prints a text box on screen (more on [Macros](#macros) in a later section). This macro needs us to provide some extra information because it doesn't know what text we want to display. So on the same line after we call `msgbox`, we have to provide the specified text we want the game to print. In this case, `RustboroCity_Text_PokemonChangeShape` just refers to a text script later in the file (more on [Text](#text) in a later section).
+
+After that, we have `MSGBOX_DEFAULT`, which just tells the game what behavior we want the text box to have. This is actually an optional piece of information to provide, as leaving this part of the line blank just makes the message box have the default behavior. It would look like this:
+```
+msgbox RustboroCity_Text_PokemonChangeShape
+```
+Incidentally, this shortened line functions the exact same as the original line. `MSGBOX_DEFAULT` is what `msgbox` already defaults to, so there was no real need to specify it in the first place. See, even the game's original devs aren't the most concise! This isn't a wrong way to do things, just redundant.
+
+You may notice that there is a comma`,` between the two pieces of added information, but not between `msgbox` and `RustboroCity_Text_PokemonChangeShape`. This is because the code already knows the distinction between a macro and the values that the macro asks for, so we only need a space between them. However, the code does not readily distinguish between the end of one value and the beginning of the next, so we have to clearly separate them with commas`,`.
+
+The next two lines are:
+```
+applymovement LOCALID_LITTLE_GIRL, Common_Movement_FaceOriginalDirection
+waitmovement 0
+```
+`applymovement` applies a movement to an object. It requires us to specify the object id number and the movement we want the object to make. The constant `LOCALID_LITTLE_GIRL` (as defined at the top of the file) is a stand-in for the object id `6`. `Common_Movement_FaceOriginalDirection` is the specific movement we want to apply (more on [Movements](#movements) in a later section). The next line, `waitmovement 0`, just tells the game to wait until the last called movement completely finishes before the script moves to the next line.
+
+The macro `release` tells the game to release the `lock` we put on the player's movement at the beginning of the event script.
+
+The last line is one of the most important components of an event script. `end` tells the game to stop running scripts. Without this, the game can get confused and potentially softlock. One of the more useful exception to this is ending an event script with `return` instead of `end`. This is useful when we call an event script from within another event script. `return` just tells the script to go back to the original event script so it can keep running. Eventually, all run scripts should run into an `end`, though. This is explained in more detail in the [Macros](#macros) section.
+
+### Event Script Names
+Every event script needs a distict name. The existing scripts already conform to a particular naming convention. Each name in this convention has three parts, each separated by an underscore`_`:
+1. The map this event script is associated with.
+2. The type of script it is (EventScript, Movement, Text, etc).
+3. The specific identifier for that event script.
+
+For example, let's look at the name of the event script in Rustboro City's scripts from earlier:
+```
+RustboroCity_EventScript_LittleGirl
+```
+In this name, `RustboroCity` is the map the script is associated with, `EventScript` is the type of script, and `LittleGirl` is the specific identifier. I think this is a very good naming convention to follow, as it is always clear to whoever looks at it what that script is for and where it is used. However, you can name your event scripts whatever you want.
+
+But why would it be useful to use the associated map in an event script's name if the scripts file is already associated with a specific map? Well, that's because **any** event script in **any** file can be run from **any** other file. I can run a Rustboro City event script from the Petalburg City scripts.inc file, so it is useful to know exactly what map that script is originally associated with. This is why it is important for every event script **in every file** to have their own unique names. The code won't allow you to have two different event scripts with the same name, even if they are in different files.
+
+### Running Event Scripts
+
 
 [(back to top)](#scripting)
 
