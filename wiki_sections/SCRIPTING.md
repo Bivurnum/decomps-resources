@@ -78,7 +78,7 @@ This allows you to use the constants interchangeably between the poryscript and 
 [(back to top)](#scripting)
 
 ## Map Scripts
-Map scripts are special scripts that run under certain conditions; for example, after you warp into a map or after you close a menu. Every script file is required to have a mapscripts function at the top (below the constants), even if you don't use any map scripts. An empty mapscripts function looks like this:
+Map scripts are special scripts that run under certain conditions; for example, after you warp into a map or after you close a menu. Every script file is required to have a mapscripts function at the top (below the constants), even if you don't use any map scripts. You cannot have more than one mapscripts function per file. An empty mapscripts function looks like this:
 ```
 Route102_MapScripts::
 	.byte 0
