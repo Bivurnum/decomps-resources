@@ -8,6 +8,7 @@
 * [Event Scripts](#event-scripts)
 * [Movements](#movements)
 * [Text](#text)
+* [All Together](#all-together)
 * [Macros](#macros)
 
 ## Intro
@@ -183,13 +184,7 @@ The next line is:
 ```
 msgbox RustboroCity_Text_PokemonChangeShape, MSGBOX_DEFAULT
 ```
-`msgbox` is a macro that prints a text box on screen. This macro needs us to provide some extra information because it doesn't know what text we want to display. So on the same line after we call `msgbox`, we have to provide the specified text we want the game to print. In this case, `RustboroCity_Text_PokemonChangeShape` just refers to a text script later in the file (more on [Text](#text) in a later section).
-
-After that, we have `MSGBOX_DEFAULT`, which just tells the game what behavior we want the text box to have. This is actually an optional piece of information to provide, as leaving this part of the line blank just makes the message box have the default behavior. It would look like this:
-```
-msgbox RustboroCity_Text_PokemonChangeShape
-```
-Incidentally, this shortened line functions the exact same as the original line. `MSGBOX_DEFAULT` is what `msgbox` already defaults to, so there was no real need to specify it in the first place. See, even the game's original devs aren't the most concise! This isn't a wrong way to do things, just redundant.
+`msgbox` is a macro that prints a message box on screen. This macro needs us to provide some extra information because it doesn't know what text we want to display. So on the same line after we call `msgbox`, we have to provide the specified text we want the game to print. In this case, `RustboroCity_Text_PokemonChangeShape` just refers to a text script later in the file (more on [Text](#text) in a later section). After that, we have `MSGBOX_DEFAULT`, which just tells the game what behavior we want the message box to have. 
 
 You may notice that there is a comma`,` between the two pieces of added information, but not between `msgbox` and `RustboroCity_Text_PokemonChangeShape`. This is because the code already knows the distinction between a macro and the values that the macro asks for, so we only need a space between them. However, the code does not readily distinguish between the end of one value and the beginning of the next, so we have to clearly separate them with commas`,`.
 
@@ -295,14 +290,14 @@ LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival:
 ```
 The naming convention here is the same one used for the names of event scripts. Here, the name tells us this block of code is text. Again, you can use whatever name you want, but the naming convention in the existing scripts is extremely useful.
 
-`.string` tells the code that the following text should be treated as a string of characters. This is necessary for the game to be able to print the text to a text box on screen.
+`.string` tells the code that the following text should be treated as a string of characters. This is necessary for the game to be able to print the text to a message box on screen.
 
 Everything inside of the quotation marks`""` will be printed on screen. The only exceptions to this are the end-of-line modifiers (`\n`, `\l`, and `\p`) and the end-of-text modifier (`$`).
 
 The end-of-line modifiers tell the game what to do at the end of each text line. Their different functions are listed here:
-* `\n`: Each in-game text box has two lines that can be displayed at once. After the game has fully printed the first line, `\n` tells the game that the next string of text should be printed on the second line in-game. This should only be used if the second line of the in-game text box is empty.
-* `\l`: Once both lines of text are filled in-game, `\l` can be used to tell the whole text box to scroll up to reveal the next string. This should only be used if both lines of the in-game text box are already printed to.
-* `\p`: This clears out the whole text box and prints the next string to the first line of the text box.
+* `\n`: Each in-game message box has two lines that can be displayed at once. After the game has fully printed the first line, `\n` tells the game that the next string of text should be printed on the second line in-game. This should only be used if the second line of the in-game message box is empty.
+* `\l`: Once both lines of text are filled in-game, `\l` can be used to tell the whole message box to scroll up to reveal the next string. This should only be used if both lines of the in-game message box are already printed to.
+* `\p`: This clears out the whole message box and prints the next string to the first line of the message box.
 
 If these modifiers are used in the middle of the text string instead of at the end, they will apply to the remainder of the current string of text. You can use multiple modifiers per string, for example:
 ```
@@ -315,10 +310,10 @@ Whoa!
 This is awesome.
 Who knew you could do that?
 ```
-Keep in mind that the in-game text box is only so wide. If a string is too long it will exceed the bounds of the text box and get printed off screen. Use the end-of-line modifiers to your advantage here. The Birch text example from earlier uses end-of-line modifiers to split sentences into multiple strings to make sure everything fits inside the in-game text box properly.
+Keep in mind that the in-game message box is only so wide. If a string is too long it will exceed the bounds of the message box and get printed off screen. Use the end-of-line modifiers to your advantage here. The Birch text example from earlier uses end-of-line modifiers to split sentences into multiple strings to make sure everything fits inside the in-game message box properly.
 
 There are a few ways to call special strings within your text:
-* `{PLAYER}`: This is replaced with the player's name. Sometimes, you will see `{KUN}` after `{PLAYER}`. `{KUN}` is a leftover functionality from the Japanese version and is not necessary to include. It's just an empty string.
+* `{PLAYER}`: This is replaced with the player's name. Sometimes, you will see `{KUN}` after `{PLAYER}`. `{KUN}` is a leftover functionality from the Japanese version and is not necessary to include; it's just an empty string.
 * `{RIVAL}`: This is replaced with the rival's name. In pokeemerald, it defaults to "MAY" if the player is male, and "BRENDAN" if the player is female.
 * `{STR_VAR_...}`: There are three variables that can be buffered with whatever predetermined strings you want. These are STR_VAR_1, STR_VAR_2, and STR_VAR_3. See the [Macros](#macros) section for different ways to buffer these strings.
 
@@ -326,9 +321,102 @@ The `$` modifier just tells the game where the end of the text is. It is require
 
 Poryscript makes the text writing process so much easier. See [this section](https://github.com/huderlem/poryscript?tab=readme-ov-file#text-statement) of their guide for more information.
 
+### Using Text in Event Scripts
+Most of the time, text is going to be used with the `msgbox` macro. `msgbox` is what creates a message box on screen.  
+Here's an example:
+```
+msgbox RustboroCity_Text_PokemonChangeShape, MSGBOX_DEFAULT
+```
+This line tells the game to create a message box on the screen using the specified text and the specified type of message box. `RustboroCity_Text_PokemonChangeShape` is the text that will be displayed within the message box. `MSGBOX_DEFAULT` tells the game what type of message box should be used.
+
+The message box type is actually an optional piece of information to provide, as leaving this part of the line blank just makes the message box have the default behavior.  
+Without it, the line would look like this:
+```
+msgbox RustboroCity_Text_PokemonChangeShape
+```
+Incidentally, this shortened line functions the exact same as the original line. `MSGBOX_DEFAULT` is what `msgbox` already defaults to, so there was no real need to specify it in the first place. See, even the game's original devs aren't the most concise! This isn't a wrong way to do things, just redundant.
+
+There are several different message box types:
+* `MSGBOX_DEFAULT`: The default type. It just creates a message box, prints all the text, and then waits for the player to push a button before moving on to the next line in the event script.
+* `MSGBOX_NPC`: This automatically runs the `lock` and `faceplayer` macros before creating the message box. After the message box is done, it automatically runs a `release` macro. This is used when the player interacts with an NPC.
+* `MSGBOX_SIGN`: This runs a `lockall` macro before the message box, and a `releaseall` macro after. This is used when a player interacts with a sign.
+* `MSGBOX_YESNO`: At the end of the message box, it prompts the player to choose "YES" or "NO", then stores the choice in the VAR_RESULT variable for later use in the event script.
+* `MSGBOX_AUTOCLOSE`: The same as `MSGBOX_DEFAULT`, but adds a `release` macro after the message box is done.
+* `MSGBOX_GETPOINTS`: Plays the jingle for receiving Battle Points at the start of the message box. Used exclusively in the Battle Frontier when BP is rewarded. Not used in pokefirered.
+* `MSGBOX_POKENAV`: This is never used.
+
+Here are some other macros that are commonly used in conjunction with `msgbox`:
+* `waitmessage`: This is often used on the line after `msgbox` to tell the game to wait until all of the text has been printed before any more event script lines can be run.
+* `closemessage`: This is used on the line after `msgbox` to tell the game to close the message box before running any more lines in the event script.
+
 [(back to top)](#scripting)
 
 ## All Together
+I made some changes to the scripts for the little girl in Rustboro City from earlier. Let's use it as an example of the three main components of scripting (event scripts, movements and text) used together:
+```
+.set LOCALID_LITTLE_BOY, 7
+.set LOCALID_LITTLE_GIRL, 8
+
+~ ~ ~
+
+RustboroCity_EventScript_LittleGirl::
+	lock
+	applymovement LOCALID_LITTLE_GIRL, RustboroCity_Movement_LittleGirlPlayGame
+	applymovement LOCALID_LITTLE_BOY, RustboroCity_Movement_LittleBoyPlayGame
+	waitmovement LOCALID_LITTLE_GIRL
+	applymovement LOCALID_LITTLE_GIRL Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_LITTLE_GIRL Common_Movement_Delay48
+	waitmovement 0
+	msgbox RustboroCity_Text_PlayingAGame
+	applymovement LOCALID_LITTLE_GIRL, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+RustboroCity_Movement_LittleBoyPlayGame::
+	lock_facing_direction
+	walk_left
+	unlock_facing_direction
+	delay_16
+	face_down
+	delay_16
+	delay_16
+	face_left
+	delay_16
+	delay_16
+	face_up
+	delay_16
+	delay_16
+	delay_8
+	walk_right
+	step_end
+
+RustboroCity_Movement_LittleGirlPlayGame::
+	walk_left
+	walk_down
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_down
+	walk_right
+	face_player
+	step_end
+
+RustboroCity_Text_PlayingAGame:
+	.string "Hey, {PLAYER}!\n"
+	.string "We are playing a game!\l"
+	.string "You can join us if you want.\p"
+	.string "Oh, wait.\nThis is only a two player game.\p"
+	.string "Well, you can just watch us play from\n"
+	.string "over there.$"
+```
+Take a look at how this plays in the game:
+
+![](https://github.com/Bivurnum/decomps-resources/blob/main/assets/gifs/scripting%20example.gif)
 
 [(back to top)](#scripting)
 
