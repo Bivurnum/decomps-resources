@@ -318,7 +318,7 @@ Who knew you could do that?
 Keep in mind that the in-game text box is only so wide. If a string is too long it will exceed the bounds of the text box and get printed off screen. Use the end-of-line modifiers to your advantage here. The Birch text example from earlier uses end-of-line modifiers to split sentences into multiple strings to make sure everything fits inside the in-game text box properly.
 
 There are a few ways to call special strings within your text:
-* `{PLAYER}`: This is replaced with the player's name. Sometimes, you will see `{KUN}` after `{PLAYER}`. `{KUN}` is a leftover functionality from the Japanese version and is not necessary to include.
+* `{PLAYER}`: This is replaced with the player's name. Sometimes, you will see `{KUN}` after `{PLAYER}`. `{KUN}` is a leftover functionality from the Japanese version and is not necessary to include. It's just an empty string.
 * `{RIVAL}`: This is replaced with the rival's name. In pokeemerald, it defaults to "MAY" if the player is male, and "BRENDAN" if the player is female.
 * `{STR_VAR_...}`: There are three variables that can be buffered with whatever predetermined strings you want. These are STR_VAR_1, STR_VAR_2, and STR_VAR_3. See the [Macros](#macros) section for different ways to buffer these strings.
 
