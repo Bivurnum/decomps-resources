@@ -229,11 +229,18 @@ Route110_EventScript_Jaclyn::
 	msgbox Route110_Text_JaclynPostBattle, MSGBOX_AUTOCLOSE
 	end
 ```
-Once that particular trainer has been defeated, the event script will not initiate that trainer battle ever again (rematches are handled with a different macro). So if the player talks to the trainer after they are defeated, the event script will skip that first line and go right to the `msgbox` macro on the next line.
+Once that particular trainer has been defeated, the event script will not initiate that trainer battle ever again (rematches are handled with a different macro). So if the player talks to the trainer after they are defeated, the event script will skip that first line and go immediately to the next line.
 
 [(back to top)](#scripting)
 
 ## Movements
+These are specific to the macro `applymovement`. Movements are written in blocks of code, similarly to event scripts.  
+Here's an example movement:
+```
+
+```
+
+All of the different movement actions are defined in [asm/macros/movement.inc](https://github.com/pret/pokeemerald/blob/master/asm/macros/movement.inc).
 
 [(back to top)](#scripting)
 
@@ -242,6 +249,5 @@ Once that particular trainer has been defeated, the event script will not initia
 [(back to top)](#scripting)
 
 ## Macros
-A macro is like a mini function.
 
 [(back to top)](#scripting)
