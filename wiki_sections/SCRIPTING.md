@@ -234,13 +234,29 @@ Once that particular trainer has been defeated, the event script will not initia
 [(back to top)](#scripting)
 
 ## Movements
-These are specific to the macro `applymovement`. Movements are written in blocks of code, similarly to event scripts.  
+Movements are written in blocks of code, similarly to event scripts.  
 Here's an example movement:
 ```
-
+Route110_Movement_BirchApproachPlayer1:
+	walk_down
+	walk_left
+	walk_left
+	walk_down
+	step_end
 ```
+The naming convention here is the same one used for the names of event scripts. Here, the name designates this block of code as a movement.
 
-All of the different movement actions are defined in [asm/macros/movement.inc](https://github.com/pret/pokeemerald/blob/master/asm/macros/movement.inc).
+Within movements, each line is a single movement action. The game applies the movement actions to the specified object one by one in the order they are listed. All of the different movement actions are defined in [asm/macros/movement.inc](https://github.com/pret/pokeemerald/blob/master/asm/macros/movement.inc). Consult this file for a complete list of available movement actions.
+
+The line `step_end` tells the game to stop applying a movement. It is necessary to put this at the end of every movement, or the game will be stuck trying to apply a movement forever. This is unnecessary with Poryscript, as it automatically adds `step_end` to the end of every movement for you.
+
+Movements are exclusively used with the macro `applymovement`. `applymovement` requires two inputs from you:
+1. The object id number of the object you want to apply the movement to. (See the [Constants](#constants) section for easy usage.)
+2. The name of the movement you want to apply.
+
+
+
+Like event scripts, movements can be run from any file. However, it tends to be impractical to use them in files other than the one they are written in, due to the fact that they are most often very specific to individual event scripts. There is an exception to this. The file [data/scripts/movement.inc](https://github.com/pret/pokeemerald/blob/master/data/scripts/movement.inc) contains movements that are used repeatedly throughout the game. You can use these in the `applymovement` macro like you would normal movements. Feel free to make new common movements and add them to that file. It is very convenient to have all of the common movements defined in one file like that; it is easy to reference when you need it.
 
 [(back to top)](#scripting)
 
