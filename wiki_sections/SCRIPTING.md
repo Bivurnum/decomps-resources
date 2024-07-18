@@ -75,6 +75,16 @@ raw `
 ```
 This allows you to use the constants interchangeably between the poryscript and raw original scripts.
 
+While constants are mostly used for object id numbers, they can be used for other things. For example, you can use constants to stand in for certain flags or variables you want to use in the file. The pokefirered decomp does this occasionally.  
+Here is what is done in the scripts file for the Pokémon Fan Club in Vermillion City:
+```
+.set SPOKE_TO_WOMAN_LAST,   FLAG_TEMP_2
+.set SPOKE_TO_FAT_MAN_LAST, FLAG_TEMP_3
+```
+That scripts file uses the two temporary flags as ways to determine whether certain NPCs have already been spoken to by the player. Using the constants helps anyone who looks at the code to better understand what those flags are used for.
+
+Constants are never necessary, but almost always useful.
+
 [(back to top)](#scripting)
 
 ## Map Scripts
@@ -261,6 +271,10 @@ Like event scripts, movements can be run from any file. However, it tends to be 
 [(back to top)](#scripting)
 
 ## Text
+
+[(back to top)](#scripting)
+
+## All Together
 
 [(back to top)](#scripting)
 
