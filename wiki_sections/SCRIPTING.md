@@ -209,7 +209,27 @@ In this name, `RustboroCity` is the map the script is associated with, `EventScr
 But why would it be useful to use the associated map in an event script's name if the scripts file is already associated with a specific map? Well, that's because **any** event script in **any** file can be run from **any** other file. I can run a Rustboro City event script from the Petalburg City scripts.inc file, so it is useful to know exactly what map that script is originally associated with. This is why it is important for every event script **in every file** to have their own unique names. The code won't allow you to have two different event scripts with the same name, even if they are in different files.
 
 ### Running Event Scripts
+There are a few different ways that event scripts can be run. You can use [map scripts](#map-scripts) to run them under specific conditions. Most of the time, you will be connecting event scripts to things on the map, like objects or triggers.
 
+Take the little girl in Rustboro City from earlier as an example. To recap, her event script is named `RustboroCity_EventScript_LittleGirl`. Let's look at Porymap to see how the event script is connected to her object:
+
+![](https://github.com/Bivurnum/decomps-resources/blob/main/assets/images/porymap_script_example.png)
+
+As you can see, the box labeled "Script" contains the name of the event script. It's as simple as that. Every time you interect with any object, it will run the event script that you specify in that box.
+
+Triggers work similarly. If a trigger is active, it will run the event script in the "Script" box whenever the player steps on the trigger.
+
+![](https://github.com/Bivurnum/decomps-resources/blob/main/assets/images/porymap_trigger_example.png)
+
+Trainers who battle when they spot the player are tied to an event script like a normal object. However, in order for the battle to work properly, the macro that runs the battle must be used on the first line of the event script.  
+Here's an example event script for a trainer:
+```
+Route110_EventScript_Jaclyn::
+	trainerbattle_single TRAINER_JACLYN, Route110_Text_JaclynIntro, Route110_Text_JaclynDefeated
+	msgbox Route110_Text_JaclynPostBattle, MSGBOX_AUTOCLOSE
+	end
+```
+Once that particular trainer has been defeated, the event script will not initiate that trainer battle ever again (rematches are handled with a different macro). So if the player talks to the trainer after they are defeated, the event script will skip that first line and go right to the `msgbox` macro on the next line.
 
 [(back to top)](#scripting)
 
