@@ -416,7 +416,7 @@ RustboroCity_Text_PlayingAGame:
 ```
 Take a look at how this plays in the game:
 
-![](https://github.com/Bivurnum/decomps-resources/blob/main/assets/gifs/scripting%20example.gif)
+![](https://github.com/Bivurnum/decomps-resources/blob/main/assets/gifs/scripting_example.gif)
 
 [(back to top)](#scripting)
 
