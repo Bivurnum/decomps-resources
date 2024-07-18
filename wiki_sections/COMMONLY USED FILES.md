@@ -2,7 +2,7 @@
 This is a list of files in the decomps that are frequently edited by ROM hackers. Each one will have a brief explaination of how that file is used. All of them link to the file in pokeemerald, but pokefirered has the same file unless otherwise specified.
 
 ### Scripting
-* [data/maps](https://github.com/pret/pokeemerald/tree/master/data/maps): Within this folder, open the folder of the map whose scripts you want to edit. The scripts are all contained in the scripts.inc file (or scripts.pory for Poryscript).
+* [data/maps](https://github.com/pret/pokeemerald/tree/master/data/maps): Within this folder, open the folder of the map whose scripts you want to edit. The scripts are all contained in the scripts.inc file (or scripts.pory for Poryscript). pokefirered separates its text from the scripts into their own text.inc files.
 * [include/constants/map_scripts.h](https://github.com/pret/pokeemerald/blob/master/include/constants/map_scripts.h): Not commonly edited at all, but a good file to reference how the different map scripts function. (pokefirered's file does not contain the same information, but the information in pokeemerald's file is equally useful for pokefirered.)
 * [asm/macros/event.inc](https://github.com/pret/pokeemerald/blob/master/asm/macros/event.inc): This file contains most of the macros used for scripting. You can write your own macros here for use in the scripts files.
 
