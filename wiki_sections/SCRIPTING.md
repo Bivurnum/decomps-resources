@@ -254,17 +254,27 @@ Route110_Movement_BirchApproachPlayer1:
 	walk_down
 	step_end
 ```
-The naming convention here is the same one used for the names of event scripts. Here, the name designates this block of code as a movement.
+The naming convention here is the same one used for the names of event scripts. Here, the name tells us this block of code is a movement. Again, you can use whatever name you want, but the naming convention in the existing scripts is extremely useful.
 
 Within movements, each line is a single movement action. The game applies the movement actions to the specified object one by one in the order they are listed. All of the different movement actions are defined in [asm/macros/movement.inc](https://github.com/pret/pokeemerald/blob/master/asm/macros/movement.inc). Consult this file for a complete list of available movement actions.
 
+If you want to do multiple of the same movement action in a row, you still have to list them all out individually. In the example above, Birch takes two steps left and both steps are listed as their own lines. Sometimes, you'll see movements that have the same movement action listed 9 or 10 times in a row (as is common when an NPC walks off screen). This is not a problem with Poryscript, as you can just tell it how many times you want to run a certain movement action in a row within the same line.  
+For example, the two `walk_left`s could be rewritten as `walk_left * 2` in Poryscript. See [this section](https://github.com/huderlem/poryscript?tab=readme-ov-file#movement-statement) of Poryscript's guide for more information on this.
+
 The line `step_end` tells the game to stop applying a movement. It is necessary to put this at the end of every movement, or the game will be stuck trying to apply a movement forever. This is unnecessary with Poryscript, as it automatically adds `step_end` to the end of every movement for you.
 
-Movements are exclusively used with the macro `applymovement`. `applymovement` requires two inputs from you:
+Movements are exclusively used with the macro `applymovement` in the event scripts. `applymovement` requires two inputs from you:
 1. The object id number of the object you want to apply the movement to. (See the [Constants](#constants) section for easy usage.)
 2. The name of the movement you want to apply.
 
-
+Unlike most other macros, `applymovement` does not wait for the movement to finish before moving to the next line. If you want to move multiple different objects simultaneously, you can just do several `applymovement` lines in a row, like so:
+```
+applymovement LOCALID_GRUNT_1, Route121_Movement_Grunt1Exit
+applymovement LOCALID_GRUNT_2, Route121_Movement_Grunt2Exit
+applymovement LOCALID_GRUNT_3, Route121_Movement_Grunt3Exit
+waitmovement 0
+```
+These are the lines that tell the Aqua Grunts on Route 121 to walk toward Mt. Pyre. All three of them walk at the same time. That `waitmovement` macro tells the game not to run any more lines in the event script until the specified object is finished moving. If the object number is `0` (like in the example), it will wait until the most recent `applymovement` line has finished its movement.
 
 Like event scripts, movements can be run from any file. However, it tends to be impractical to use them in files other than the one they are written in, due to the fact that they are most often very specific to individual event scripts. There is an exception to this. The file [data/scripts/movement.inc](https://github.com/pret/pokeemerald/blob/master/data/scripts/movement.inc) contains movements that are used repeatedly throughout the game. You can use these in the `applymovement` macro like you would normal movements. Feel free to make new common movements and add them to that file. It is very convenient to have all of the common movements defined in one file like that; it is easy to reference when you need it.
 
