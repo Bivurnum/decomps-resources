@@ -281,6 +281,50 @@ Like event scripts, movements can be run from any file. However, it tends to be 
 [(back to top)](#scripting)
 
 ## Text
+Text is also written in blocks of code.
+Here is an example text:
+```
+LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival:
+	.string "PROF. BIRCH: If you work at POKéMON\n"
+	.string "and gain experience, I think you'll make\l"
+	.string "an extremely good TRAINER.\p"
+	.string "My kid, {RIVAL}, is also studying\n"
+	.string "POKéMON while helping me out.\p"
+	.string "{PLAYER}{KUN}, don't you think it might be\n"
+	.string "a good idea to go see {RIVAL}?$"
+```
+The naming convention here is the same one used for the names of event scripts. Here, the name tells us this block of code is text. Again, you can use whatever name you want, but the naming convention in the existing scripts is extremely useful.
+
+`.string` tells the code that the following text should be treated as a string of characters. This is necessary for the game to be able to print the text to a text box on screen.
+
+Everything inside of the quotation marks`""` will be printed on screen. The only exceptions to this are the end-of-line modifiers (`\n`, `\l`, and `\p`) and the end-of-text modifier (`$`).
+
+The end-of-line modifiers tell the game what to do at the end of each text line. Their different functions are listed here:
+* `\n`: Each in-game text box has two lines that can be displayed at once. After the game has fully printed the first line, `\n` tells the game that the next string of text should be printed on the second line in-game. This should only be used if the second line of the in-game text box is empty.
+* `\l`: Once both lines of text are filled in-game, `\l` can be used to tell the whole text box to scroll up to reveal the next string. This should only be used if both lines of the in-game text box are already printed to.
+* `\p`: This clears out the whole text box and prints the next string to the first line of the text box.
+
+If these modifiers are used in the middle of the text string instead of at the end, they will apply to the remainder of the current string of text. You can use multiple modifiers per string, for example:
+```
+.string "Whoa!\nThis is awesome.\l"
+.string "Who knew you could do that?$"
+```
+This would appear in-game as:
+```
+Whoa!
+This is awesome.
+Who knew you could do that?
+```
+Keep in mind that the in-game text box is only so wide. If a string is too long it will exceed the bounds of the text box and get printed off screen. Use the end-of-line modifiers to your advantage here. The Birch text example from earlier uses end-of-line modifiers to split sentences into multiple strings to make sure everything fits inside the in-game text box properly.
+
+There are a few ways to call special strings within your text:
+* `{PLAYER}`: This is replaced with the player's name. Sometimes, you will see `{KUN}` after `{PLAYER}`. `{KUN}` is a leftover functionality from the Japanese version and is not necessary to include.
+* `{RIVAL}`: This is replaced with the rival's name. In pokeemerald, it defaults to "MAY" if the player is male, and "BRENDAN" if the player is female.
+* `{STR_VAR_...}`: There are three variables that can be buffered with whatever predetermined strings you want. These are STR_VAR_1, STR_VAR_2, and STR_VAR_3. See the [Macros](#macros) section for different ways to buffer these strings.
+
+The `$` modifier just tells the game where the end of the text is. It is required in order to function properly.
+
+Poryscript makes the text writing process so much easier. See [this section](https://github.com/huderlem/poryscript?tab=readme-ov-file#text-statement) of their guide for more information.
 
 [(back to top)](#scripting)
 
