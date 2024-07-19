@@ -1,4 +1,6 @@
 ## Games with Decomps
+*Contributors: Bivurnum*
+
 * [**pokeemerald**](https://github.com/pret/pokeemerald/blob/master/INSTALL.md): The decomp of Pokémon Emerald. This is the one with the most documentation, tutorials, and support. There is also [pokeemerald-expansion](https://github.com/Bivurnum/decomps-resources/wiki/pokeemerald%E2%80%90expansion), which is a highly enhanced version of pokeemerald. The expansion is covered in more detail in its own section.
 * [**pokefirered**](https://github.com/pret/pokefirered/blob/master/INSTALL.md): The decomp of Pokémon FireRed. This is the one to chose when you specifically want a gen 1 remake as your ROM base. While not as extensively supported as pokeemerald, pokefirered functions similarly to pokeemerald and many of the tutorials can be applied to both.
 
