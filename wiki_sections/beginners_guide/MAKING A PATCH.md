@@ -1,4 +1,6 @@
 ## Making a Patch
+*Contributors: Bivurnum*
+
 When your ROM hack is ready to distribute to others, you'll need to provide them with a patch.
 
 > [!CAUTION]
