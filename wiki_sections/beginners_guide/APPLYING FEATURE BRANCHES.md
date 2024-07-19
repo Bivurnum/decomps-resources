@@ -1,5 +1,22 @@
-## Pulling Feature Branches
-Some hackers develop features in their own branches that other people might find useful to include in their projects. These are called feature branches, and they are generally quite easy to implement. I'll go through an example to help illustrate how this is done:
+## Applying Feature Branches
+*Contributors: Bivurnum and RavePossum*
+
+Some hackers develop features in their own branches that other people might find useful to include in their projects. These are called feature branches, and they are generally quite easy to implement.
+
+### Manual Implementation
+When first starting out, it is recommended that you enter your desired feature branch into your project manually. Changing the code yourself is a good way to get familiar with how it works. It can also make you aware of conflicts between the feature branch and your project, so you can fix them right then and there instead of having to look for problems later.
+
+There is a convenient way to look up all of the changes that need to be done and which files need to be altered. If you go to the feature branch's repository page on github.com, near the top of the page, click where it says how many commits ahead of the upstream it is:
+
+![](https://github.com/Bivurnum/decomps-resources/blob/main/assets/images/github_commits_ahead.png)
+
+This will bring you to a page like [this one](https://github.com/pret/pokeemerald/compare/master...ghoulslash:pokeemerald:overworld-expansion). If the branch has a lot of commits, you may have to click where it says the number of files changed. From here, you just have to scroll down and make the changes that are listed. Things in green are to be added to the file, while things in red need to be removed. Just be patient and try to learn from what code is being replaced or added. Your skill will increase with repeated practice.
+
+A good place to ask for help with these sorts of things is the [decomps forum](https://www.pokecommunity.com/forums/decomps-disassemblies.436/) at pokecommunity. Just be sure to be as specific with your problem or question as possible. And always be polite and thank those who take the time to assist you.
+
+### Pulling a Branch
+Once you are more comfortable working with the code, you can try pulling a feature branch directly into your project.  
+I'll go through an example to help illustrate how this is done:
 
 I have personally developed a feature branch that adds walking animations to Emerald NPCs that don't originally have any. If you wanted to merge that feature into your own project, you would enter these commands into your console:
 
@@ -22,9 +39,3 @@ You'll have to resolve the conflicts before the branch can be implemented into y
 The files listed under "Merge Changes" are the ones with conflicts. Click on a file, then click on the "Resolve in Merge Editor" button in the lower right of the window. This will bring up a screen where you can choose how you want the incoming change to be applied. Once you have it how you want it, click on the "Complete Merge" button in the lower right of the window. Do this process for all of the files with conflicts. There may be multiple conflicts per file.
 
 Once you have all of the conflicts resolved, you can click the button that says "√ Commit" (or make a commit through GitHub Desktop) and it will fully merge the branch into your project.
-
-If the console tells you that the branch cannot be merged, you'll have to make all of the alterations yourself by hand. This tends to happen when older branches are not updated to be compatible with the latest version of the decomp. Don't worry! There is a convenient way to look up all of the changes that need to be done and which files need to be altered. If you go to the repository page on github.com, near the top of the page, click where it says how many commits ahead of the upstream it is:
-
-![](https://github.com/Bivurnum/decomps-resources/blob/main/assets/images/github_commits_ahead.png)
-
-This will bring you to a page like [this one](https://github.com/pret/pokeemerald/compare/master...Bivurnum:pokeemerald:all-npcs-walk). If the branch has a lot of commits, you may have to click where it says the number of files changed. From here, you just have to scroll down and make the changes that are listed. Things in green are to be added to the file, while things in red need to be removed. You may need to alter things as needed to work within the code of your project.
