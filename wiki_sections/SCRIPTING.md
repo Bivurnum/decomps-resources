@@ -421,5 +421,12 @@ Take a look at how this plays in the game:
 [(back to top)](#scripting)
 
 ## Macros
+There are a whole lot of macros that can be used when scripting. All of them are defined in [asm/macros/event.inc](https://github.com/pret/pokeemerald/blob/master/asm/macros/event.inc). You can even write your own macro in that file and then use it in the scripts.
+
+I'll go over a few of the more frequently used macros here. The main descriptions are taken directly from pret's comments in the event.inc file:
+* `lock`: Freezes all objects immediately except the player and the selected object. The player and selected object are frozen once their movement is finished.
+	- This is useful when the player interacts with a moving NPC, because it makes sure the NPC won't get frozen halfway through taking a step.
+* `lockall`: Freezes all objects immediately except the player. The player is frozen once their movement is finished.
+	- 
 
 [(back to top)](#scripting)
