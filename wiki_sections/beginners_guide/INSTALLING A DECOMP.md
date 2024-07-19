@@ -1,5 +1,5 @@
 ## Installing a Decomp
-Contributors: Bivurnum and RavePossum
+*Contributors: Bivurnum and RavePossum*
 
 Once you've chosen which decomp you want to work with, follow the instructions listed in the Install.md file within that decomp's repository on GitHub. Here are the links to those instructions:
 * [Install pokeemerald](https://github.com/pret/pokeemerald/blob/master/INSTALL.md)
