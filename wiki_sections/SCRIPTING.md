@@ -423,10 +423,23 @@ Take a look at how this plays in the game:
 ## Macros
 There are a whole lot of macros that can be used when scripting. All of them are defined in [asm/macros/event.inc](https://github.com/pret/pokeemerald/blob/master/asm/macros/event.inc). You can even write your own macro in that file and then use it in the scripts.
 
-I'll go over a few of the more frequently used macros here. The main descriptions are taken directly from pret's comments in the event.inc file:
+I'll go over a few of the more frequently used macros here. The main descriptions are taken directly from pret's comments in the event.inc file. The sub-bullet points will be my personal additions.
 * `lock`: Freezes all objects immediately except the player and the selected object. The player and selected object are frozen once their movement is finished.
-	- This is useful when the player interacts with a moving NPC, because it makes sure the NPC won't get frozen halfway through taking a step.
+  - This is useful when the player interacts with a moving NPC, because it makes sure the NPC won't get frozen halfway through taking a step.
 * `lockall`: Freezes all objects immediately except the player. The player is frozen once their movement is finished.
-	- 
+  - This is similar to `lock`, but is used in more contexts. Basically, `lockall` is used unless there is a specific need for `lock`.
+* `release`: Resumes normal movement for the selected object (if there is one) and the player. Also closes any standard message boxes that are still open.
+  - This is basically a counterpart of `lock`, undoing its effects when you no longer need them.
+* `releaseall`: Resumes normal movement for all objects on-screen, and closes any standard message boxes that are still open.
+  - This is basically a counterpart of `lockall`, undoing its effects when you no longer need them.
+* `end`: Terminates script execution.
+  - All script executions must eventually run into an `end`, or the game can stop functioning properly.
+* `call`: Jumps to destination and continues script execution from there. The location of the calling script is remembered and can be returned to later.
+  - 
+* `msgbox`: Buffers the given text and calls the relevant standard message script.
+  - This is covered in more detail in the [Text](#text) section of this guide.
+* `waitmessage`: If a standard message box (or its text) is being drawn on-screen, this command blocks script execution until the box and its text have been fully drawn.
+* `closemessage`: Closes the current message box.
+* `applymovement`: 
 
 [(back to top)](#scripting)
