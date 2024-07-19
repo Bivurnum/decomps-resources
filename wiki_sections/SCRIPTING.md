@@ -8,7 +8,7 @@
 * [Event Scripts](#event-scripts)
 * [Movements](#movements)
 * [Text](#text)
-* [All Together](#all-together)
+* [Scripting Example](#scripting-example)
 * [Macros](#macros)
 
 ## Intro
@@ -351,8 +351,8 @@ Here are some other macros that are commonly used in conjunction with `msgbox`:
 
 [(back to top)](#scripting)
 
-## All Together
-I made some changes to the scripts for the little girl in Rustboro City from earlier. Let's use it as an example of the three main components of scripting (event scripts, movements and text) used together:
+## Scripting Example
+I made some custom changes to the scripts for the little girl in Rustboro City from earlier. Let's use it as an example of the three main components of scripting (event scripts, movements and text) used together:
 ```
 .set LOCALID_LITTLE_BOY, 7
 .set LOCALID_LITTLE_GIRL, 8
@@ -411,8 +411,8 @@ RustboroCity_Text_PlayingAGame:
 	.string "We are playing a game!\l"
 	.string "You can join us if you want.\p"
 	.string "Oh, wait.\nThis is only a two player game.\p"
-	.string "Well, you can just watch us play from\n"
-	.string "over there.$"
+	.string "Well, you can just watch us play\n"
+	.string "from over there.$"
 ```
 Take a look at how this plays in the game:
 
