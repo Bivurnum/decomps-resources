@@ -13,7 +13,7 @@
 * [Macros](#macros)
 
 ## Intro
-Scripts are how we tell the game how to handle most things that happen in the overworld. Each map section has its own file that defines all of the scripts that happen within that area. To find the scripts, navigate to data/maps. Then open the folder of the map you are trying to change the scripts for. The scripts will all be located within the scripts.inc file, which is where we will be doing our editing. (If you are using Poryscript, you will be editing scripts.pory instead.)
+Scripts are how we tell the game how to handle most things that happen in the overworld. Each map section has its own file that defines all of the scripts that happen within that area. To find the scripts, navigate to [data/maps](https://github.com/pret/pokeemerald/tree/master/data/maps) in your project folder. Then open the folder of the map you are trying to change the scripts for. The scripts will all be located within the scripts.inc file, which is where we will be doing our editing. (If you are using Poryscript, you will be editing scripts.pory instead.)
 
 This guide will mostly focus on pokeemerald, but the basics still hold true for pokefirered.
 
@@ -277,7 +277,7 @@ Like event scripts, movements can be run from any file. However, it tends to be 
 [(back to top)](#scripting)
 
 ## Text
-Text is also written in blocks of code.
+Text is also written in blocks of code. For pokefirered users, the text is separated from the scripts into their own text.inc files.
 Here is an example text:
 ```
 LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival:
@@ -320,7 +320,7 @@ There are a few ways to call special strings within your text:
 
 The `$` modifier just tells the game where the end of the text is. It is required in order to function properly.
 
-Poryscript makes the text writing process so much easier. See [this section](https://github.com/huderlem/poryscript?tab=readme-ov-file#text-statement) of their guide for more information.
+Poryscript makes the text writing process **so much** easier. See [this section](https://github.com/huderlem/poryscript?tab=readme-ov-file#text-statement) of their guide for more information.
 
 ### Using Text in Event Scripts
 Most of the time, text is going to be used with the `msgbox` macro. `msgbox` is what creates a message box on screen.  
