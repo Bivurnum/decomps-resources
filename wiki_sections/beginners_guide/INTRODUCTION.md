@@ -1,4 +1,6 @@
 ## Introduction
+Contributors: Bivurnum
+
 You've decided you want to hack a Pokémon GBA ROM. Great! Welcome to the world of gen 3 ROM hacking!
 
 There are two different ways to hack: Binary and Decomps.
