@@ -1,4 +1,5 @@
 # Scripting
+*Contributors: Bivurnum*
 
 ## Contents
 * [Intro](#intro)
