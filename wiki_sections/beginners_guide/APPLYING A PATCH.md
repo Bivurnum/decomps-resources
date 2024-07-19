@@ -1,4 +1,6 @@
 ## Applying a Patch
+*Contributors: Bivurnum*
+
 In order to play a ROM hack, you'll have to obtain that hack's patch.
 
 > [!WARNING]
