@@ -1,5 +1,5 @@
 ## Introduction
-Contributors: Bivurnum
+*Contributors: Bivurnum*
 
 You've decided you want to hack a Pokémon GBA ROM. Great! Welcome to the world of gen 3 ROM hacking!
 
