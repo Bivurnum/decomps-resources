@@ -1,4 +1,6 @@
 ## pokeemerald-expansion
+*Contributors: Bivurnum*
+
 The amazing team with ROM Hacking Hideout (RHH) have spent years putting together a version of pokeemerald that includes modern Pokémon mechanics and a plethora of quality of life features. The amount of features they've added is staggeringly large, but here is a general list of features that make pokeemerald-expansion great:
 * Physical/Special Split: Games from gen 4 onward had the individual Pokémon moves designated as doing either physical or special damage (ie, Waterfall is physical while Surf is special), rather than the gen 3 moves whose physical/special designation was tied only to the move's type. This brings the game up to the more modern standard.
 * Modern Battle Engine: Battle mechanics change with each new generation of Pokémon games. Most game's battle mechanics are included in pokeemerald-expansion and can be individually toggled to different generation standards. For example, you could set the move Toxic to have the gen 4 mechanic where the accuracy is unaffected by the attacking Pokémon's type, while aslo setting the gen 6 mechanic where Pokémon gain experience when you capture a wild Pokémon. It is highly customizable to your needs.
