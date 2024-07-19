@@ -1,4 +1,6 @@
 ## GitHub Desktop
+*Contributors: Bivurnum*
+
 I hacked with decomps for over a year without knowing the existence of GitHub Desktop. I'm not exaggerating when I say this would have saved me HUNDREDS of hours of work and headaches had I been using it.
 
 The benefits of using GitHub Desktop:
