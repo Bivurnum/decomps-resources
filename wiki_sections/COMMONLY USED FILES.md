@@ -1,4 +1,6 @@
 # Commonly Used Files
+*Contributors: Bivurnum*
+
 This is a list of files in the decomps that are frequently edited by ROM hackers. Each one will have a brief explaination of how that file is used. All of them link to the file in pokeemerald, but pokefirered has the same file unless otherwise specified.
 
 ### Scripting
