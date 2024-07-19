@@ -1,5 +1,7 @@
 ## Tutorials
-There are a great many tutorials for the gen 3 decomps, and the list keeps growing with each passing day! The decomp that gets the most attention here is pokeemerald (and by association pokeemerald-expansion). However, if you're finding a lack of pokefirered tutorials, remember that both pokefirered and pokeemerald are written in the C programming language, so a lot of what works for one can probably work for the other (usually with some minor code tweaking).
+*Contributors: Bivurnum and RavePossum*
+
+There are a great many tutorials for the gen 3 decomps, and the list keeps growing with each passing day! The decomp that gets the most attention here is pokeemerald (and by association pokeemerald-expansion). However, if you're finding a lack of pokefirered tutorials, note that Emerald was based on FireRed and LeafGreen, so there is a lot of inherent compatibility between them. Also, there was somewhat of an active effort to align the pret repos for compatibility. So, a lot of what works for pokeemerald also works for pokefirered (occasionally with some minor code tweaking).
 
 * [**The pokeemerald wiki**](https://github.com/pret/pokeemerald/wiki): There is a whole tutorials section here with contributions from countless hackers. The tutorials are organized by section, so it is easy to find the kind of tutorial you're looking for. Feel free to contribute to it if you come up with something new yourself.
 
