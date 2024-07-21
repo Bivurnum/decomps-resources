@@ -18,7 +18,12 @@ GBA patches will almost always be one of the following file types:
 * .ppf
 * .rup
 
-Once you've downloaded a patch, you will need to apply it to an unedited ROM of the game it was based on. For example, if the ROM hack is a hack of Pokémon FireRed, you will need to apply the patch to an unedited copy of a FireRed ROM. The creator will usually tell you which version of the base rom you should use, but if they don't, I advise that you use one of the specific base ROM versions listed in the [Making a Patch](https://github.com/Bivurnum/decomps-resources/wiki/Making-a-Patch) section.
+Once you've downloaded a patch, you will need to apply it to an unedited ROM of the game it was based on. For example, if the ROM hack is a hack of Pokémon FireRed, you will need to apply the patch to an unedited copy of a FireRed ROM. The creator will usually tell you which version of the base rom you should use, but if they don't, I advise that you use one of these specific base ROM versions:
+* 1986 - Pokemon Emerald (U)(TrashMan)
+* 1636 - Pokemon Fire Red (U)(Squirrels)
+
+> [!NOTE]
+> I cannot tell you where to find or download base ROMs. However, they shouldn't be hard for you to find if you look. Search engines are a wonderous thing.
 
 Some hacks will provide you with a link that automatically patches the game for you. Others will provide a patcher application with the patch download (Unbound does this). **Most hacks do neither.** If you only have a patch, you will need to find a patcher to use. I'll tell you how to use my favorite online patcher, [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/):
 
