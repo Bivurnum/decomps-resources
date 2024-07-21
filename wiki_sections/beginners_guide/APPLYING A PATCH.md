@@ -8,6 +8,8 @@ In order to play a ROM hack, you'll have to obtain that hack's patch.
 
 The best place to find the most up to date version of a particular patch is on the original creator's official post. [The PokéRom Codex](https://pokeromcodex.notion.site/8f188f1761b9430f9adb68833c44e5b8?v=bb31503a729442f798b4233509dacab8) (by themanynamed) is an ever-expanding database of ROM hacks that provides links to the appropriate places to find the patch wherever possible.
 
+If the download is a .zip file, you will have to extract the patch (and any other files) from it. A lot of computers come with this capability already. Just right click on the .zip file and select "Extract All...". If you are unable do this, you may need to download an application that can do it. [7zip](https://www.7-zip.org/) and [WinRAR](https://www.win-rar.com/download.html?&L=0) are two examples of such applications.
+
 GBA patches will almost always be one of the following file types:
 * .ips
 * .bps
