@@ -11,9 +11,9 @@ Most other computer emulators, like Visual Boy Advance, tend to be unreliable. T
 ### For Phones
 While not really useful for testing changes, it is worth mentioning these as ways for players to run ROM hacks.
 
-* [**Lemuroid**](https://play.google.com/store/apps/details?id=com.swordfish.lemuroid&hl=en_US&gl=US): This is only compatible with Android phones, but it is free.
-* [**Pizza Boy**](https://play.google.com/store/apps/details?id=it.dbtecno.pizzaboygba&hl=en_US): Another Android exclusive.
-* [**Delta**](https://faq.deltaemulator.com/): It hasn't been around super long, but it is likely one of the more accessible ways for people to play GBA ROMs on their phones. As far as I know, it is the only functional and free phone emulator that is on all the official app stores and works on both Android and iOS.
+* [**Delta**](https://faq.deltaemulator.com/): It hasn't been around super long, but it is likely one of the more accessible ways for people to play games from a variety of older Nintendo systems (GBA, DS, N64, etc) on their phones. As far as I know, it is the only functional and free phone emulator that is on all the official app stores and works on both Android and iOS.
+* [**Lemuroid**](https://play.google.com/store/apps/details?id=com.swordfish.lemuroid&hl=en_US&gl=US): This emulates a **wide** variety of systems. It is only compatible with Android phones, but it is free.
+* [**Pizza Boy**](https://play.google.com/store/apps/details?id=it.dbtecno.pizzaboygba&hl=en_US): Another free Android exclusive. This only plays 32-bit handheld games (GBA and the like).
 * [**RetroArch**](https://www.retroarch.com/?page=platforms): From what I hear, this application can run the mGBA emulator on a variety of devices, including phones (both Android and iOS).
 
 The John GBA and My Boy emulators are discouraged because they are notorious for not running ROM hacks very well.
