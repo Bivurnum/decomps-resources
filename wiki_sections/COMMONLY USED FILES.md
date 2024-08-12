@@ -40,7 +40,13 @@ These are all files where you can toggle different features and mechanics to you
 * [include/config/save.h](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/save.h)
 * [include/config/species_enabled.h](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/config/species_enabled.h)
 
-## Partner Trainers
+## Trainers
+* [src/data/trainers.party](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/src/data/trainers.party): If you are using version 1.9.0 or later, this is the only file you should be using to edit trainer information and teams, though there is a config toggle to switch it back to using the older file format. The new format is compatible with the exported text from [Pokémon Showdown](https://pokemonshowdown.com/) teams. You still have to define the trainers in [include/constants/opponents.h](https://github.com/pret/pokeemerald/blob/master/include/constants/opponents.h) like normal. Versions prior to 1.9.0 use the same files and format as base pokeemerald.
+
+## Partner Trainers (For multi battles with an AI partner)
 * [include/constants/battle_partner.h](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/include/constants/battle_partner.h): This is where all of the partner trainers are defined (for example, the multi battle in the Space Center with Steven on your side). A partner MUST be defined here in order to make them able to battle alongside the player.
+### 1.9.0+
+* [src/data/battle_partners.party](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/src/data/battle_partners.party): All of the data for partner trainers should be edited in this one file.
+### Pre-1.9.0
 * [src/data/battle_partners.h](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/src/data/battle_partners.h): This is where all of the partner trainers' data is determined except for their Pokémon teams.
 * [src/data/partner_parties.h](https://github.com/rh-hideout/pokeemerald-expansion/blob/master/src/data/partner_parties.h): This is where partner trainers' Pokémon teams are determined.
