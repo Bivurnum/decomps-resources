@@ -4,7 +4,7 @@ This brief guide shows how you could add new graphics to the existing field effe
 The field effect system is convoluted and hard to add to, so it is much easier to piggyback off of the existing code than it is to add an entirely new field effect.
 A more comprehensive version of this guide will be added eventually.
 
-The example used in some of the steps below are for changing the image and palette of the step in tall grass field effect only while the player is in the Route 102 map, but still using the default graphics in all other maps.
+The example used in some of the steps below are for changing the image and palette of the step-in-tall-grass field effect only while the player is in the Route 102 map, but still using the default graphics in all other maps.
 However, I imagine you could use similar steps in order to achieve similar results with most (if not all) of the other field effects in the game.
 
 Some use case examples for this would be:
@@ -58,3 +58,8 @@ Some use case examples for this would be:
         {
             FieldEffectStop(sprite, FLDEFF_TALL_GRASS);
         }
+```
+
+That's all there is! If the graphics don't look correct in game, make sure your new entry in `spritesheet_rules.mk` is correct and run a `make mostlyclean` before compiling again.
+
+Feel free to contact me if you have any questions.
