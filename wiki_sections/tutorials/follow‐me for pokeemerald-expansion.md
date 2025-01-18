@@ -10,11 +10,11 @@
 I have updated [ghoulslash’s follow-me feature branch](https://github.com/ghoulslash/pokeemerald/tree/follow_me) to be compatible with versions 1.9 and 1.10 of pokeemerald-expansion. Most of ghoulslash’s original code remains intact, so most of the credit still goes to them. I have, however, included some of my own quality of life features with this updated version.
 
 To merge the branch into your project, enter these two commands into the console:  
-`git remote add Bivurnum https://github.com/Bivurnum/pokeemerald`  
-`git pull Bivurnum follow-me-expansion`
+`git remote add Biv-expansion https://github.com/Bivurnum/pokeemerald-expansion`  
+`git pull Biv-expansion follow-me`
 
 Or if you want to apply the changes manually, you can find the comparison here:  
-[https://github.com/rh-hideout/pokeemerald-expansion/compare/master...Bivurnum:pokeemerald:follow-me-expansion](https://github.com/rh-hideout/pokeemerald-expansion/compare/master...Bivurnum:pokeemerald:follow-me-expansion)
+[https://github.com/rh-hideout/pokeemerald-expansion/compare/expansion/1.9.0...Bivurnum:pokeemerald-expansion:follow-me](https://github.com/rh-hideout/pokeemerald-expansion/compare/expansion/1.9.0...Bivurnum:pokeemerald-expansion:follow-me)
 
 <details>
     <summary><i>Note for merging into expansion 1.10:</i></summary>
