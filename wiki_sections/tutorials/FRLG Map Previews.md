@@ -1,4 +1,4 @@
-#FRLG Map Previews
+# FRLG Map Previews
 
 <a name="mps-fade-in-gif"></a>
 
