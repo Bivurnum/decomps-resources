@@ -1,4 +1,4 @@
-#Easily Toggle Different Wild Encounters
+# Easily Toggle Different Wild Encounters
 
 _written by Bivurnum_  
 _works with pokeemerald-expansion versions 1.8.0 through 1.9.0 (and likely some older versions)_
