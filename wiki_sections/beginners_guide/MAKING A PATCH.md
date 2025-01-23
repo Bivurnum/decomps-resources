@@ -27,7 +27,7 @@ Most modern ROM hackers choose to use these specific versions because they are d
 
 Where it says "Modified ROM", you will provide the ROM that you compiled from your decomp. This will be located in your project folder and will be a .gba file. For example, if you are working with pokeemerald, it will be in the "pokeemerald" folder and it will be named "pokeemerald.gba".
 
-The "Patch Type" is completely up to you. They are just different formats of patches. If your patch doesn't work for someone, try making a new patch using a different format.
+The "Patch Type" is completely up to you, but BPS is the recommended one. If your patch doesn't work for someone, try making a new patch using a different format.
 
 Once you have everything filled in, just click the "Create Patch" button and it will prompt you to name it and designate where you'd like to download it on your device:
 
